@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AC141957-C37A-4D40-8107-8CF59C1A2982}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>CosmicFlow.AIMA</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CosmicFlow.AIMA</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Test\Core\Unit\Logic\FOL\CNFConverterTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\FOL\CommonFOLInferenceProcedureTests.cs" />
+    <Compile Include="Test\Core\Unit\Logic\FOL\Inference\DemodulationTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\FOL\Inference\FOLBCAskTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\FOL\Inference\FOLFCAskTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\FOL\Inference\FOLModelEliminationTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\FOL\Inference\FOLOTTERLikeTheoremProverTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\FOL\Inference\FOLTFMResolutionTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\FOL\Inference\ParamodulationTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\FOL\KB\Data\ChainTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\FOL\KB\Data\ClauseTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\FOL\KB\FOLKnowledgeBaseTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\FOL\Parsing\FOLLexerTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\FOL\Parsing\FOLParserTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\FOL\PredicateCollectorTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\FOL\SubstVisitorTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\FOL\SubsumptionEliminationTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\FOL\UnifierTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\FOL\VariableCollectorTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\Propositional\Algorithms\DPLLTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\Propositional\Algorithms\KnowledgeBaseTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\Propositional\Algorithms\ModelTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\Propositional\Algorithms\PLFCEntailsTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\Propositional\Algorithms\PLResolutionTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\Propositional\Algorithms\TTEntailsTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\Propositional\Parsing\ListTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\Propositional\Parsing\PELexerTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\Propositional\Parsing\PEParserTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\Propositional\Visitors\CNFClauseGathererTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\Propositional\Visitors\CNFTransformerTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\Propositional\Visitors\SymbolClassifierTest.cs" />
+    <Compile Include="Test\Core\Unit\Logic\Propositional\Visitors\SymbolCollectorTest.cs" />
+    <Compile Include="Util\VerbosityLevel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource\ascii-robotdata1.txt" />
+    <EmbeddedResource Include="Resource\iris.txt" />
+    <EmbeddedResource Include="Resource\orings.txt" />
+    <EmbeddedResource Include="Resource\rabbiteyes.txt" />
+    <EmbeddedResource Include="Resource\readme.htm" />
+    <EmbeddedResource Include="Resource\zoo.txt" />
+    <Compile Include="Environment\CellWorld\Cell.cs" />
+    <Compile Include="Environment\CellWorld\CellWorld.cs" />
+    <Compile Include="Environment\CellWorld\CellWorldPosition.cs" />
+    <Compile Include="Learning\Framework\AttributeSpecification.cs" />
+    <Compile Include="Learning\Framework\DataSet.cs" />
+    <Compile Include="Learning\Framework\DataSetFactory.cs" />
+    <Compile Include="Learning\Framework\DataSetSpecification.cs" />
+    <Compile Include="Learning\Framework\Example.cs" />
+    <Compile Include="Learning\Framework\Learner.cs" />
+    <Compile Include="Learning\Framework\LearningAttribute.cs" />
+    <Compile Include="Learning\Framework\NumericAttribute.cs" />
+    <Compile Include="Learning\Framework\NumericAttributeSpecification.cs" />
+    <Compile Include="Learning\Framework\StringAttribute.cs" />
+    <Compile Include="Learning\Framework\StringAttributeSpecification.cs" />
+    <Compile Include="Learning\Inductive\ConstantDecisonTree.cs" />
+    <Compile Include="Learning\Inductive\DecisionList.cs" />
+    <Compile Include="Learning\Inductive\DecisionTree.cs" />
+    <Compile Include="Learning\Inductive\DLTest.cs" />
+    <Compile Include="Learning\Inductive\DLTestFactory.cs" />
+    <Compile Include="Learning\Knowledge\CurrentBestLearning.cs" />
+    <Compile Include="Learning\Knowledge\FOLDataSetDomain.cs" />
+    <Compile Include="Learning\Knowledge\FOLExample.cs" />
+    <Compile Include="Learning\Knowledge\Hypothesis.cs" />
+    <Compile Include="Learning\Learners\AdaBoostLearner.cs" />
+    <Compile Include="Learning\Learners\CurrentBestLearner.cs" />
+    <Compile Include="Learning\Learners\DecisionListLearner.cs" />
+    <Compile Include="Learning\Learners\DecisionTreeLearner.cs" />
+    <Compile Include="Learning\Learners\MajorityLearner.cs" />
+    <Compile Include="Learning\Learners\StumpLearner.cs" />
+    <Compile Include="Learning\Neural\ActivationFunction.cs" />
+    <Compile Include="Learning\Neural\BackPropLearning.cs" />
+    <Compile Include="Learning\Neural\FeedForwardNeuralNetwork.cs" />
+    <Compile Include="Learning\Neural\FunctionApproximator.cs" />
+    <Compile Include="Learning\Neural\HardLimitActivationFunction.cs" />
+    <Compile Include="Learning\Neural\IrisDataSetNumerizer.cs" />
+    <Compile Include="Learning\Neural\IrisNNDataSet.cs" />
+    <Compile Include="Learning\Neural\Layer.cs" />
+    <Compile Include="Learning\Neural\LayerSensitivity.cs" />
+    <Compile Include="Learning\Neural\LogSigActivationFunction.cs" />
+    <Compile Include="Learning\Neural\NNConfig.cs" />
+    <Compile Include="Learning\Neural\NNDataSet.cs" />
+    <Compile Include="Learning\Neural\NNExample.cs" />
+    <Compile Include="Learning\Neural\NNTrainingScheme.cs" />
+    <Compile Include="Learning\Neural\Numerizer.cs" />
+    <Compile Include="Learning\Neural\Perceptron.cs" />
+    <Compile Include="Learning\Neural\PureLinearActivationFunction.cs" />
+    <Compile Include="Learning\Neural\RabbitEyeDataSet.cs" />
+    <Compile Include="Learning\Reinforcement\MDPAgent.cs" />
+    <Compile Include="Learning\Reinforcement\PassiveADPAgent.cs" />
+    <Compile Include="Learning\Reinforcement\PassiveTDAgent.cs" />
+    <Compile Include="Learning\Reinforcement\QLearningAgent.cs" />
+    <Compile Include="Learning\Reinforcement\QTable.cs" />
+    <Compile Include="Logic\Common\Lexer.cs" />
+    <Compile Include="Logic\Common\LogicTokenTypes.cs" />
+    <Compile Include="Logic\Common\Parser.cs" />
+    <Compile Include="Logic\Common\ParseTreeNode.cs" />
+    <Compile Include="Logic\Common\Token.cs" />
+    <Compile Include="Logic\Common\Visitor.cs" />
+    <Compile Include="Logic\FOL\CNFConverter.cs" />
+    <Compile Include="Logic\FOL\Connectors.cs" />
+    <Compile Include="Logic\FOL\Domain\DomainFactory.cs" />
+    <Compile Include="Logic\FOL\Domain\FOLDomain.cs" />
+    <Compile Include="Logic\FOL\Domain\FOLDomainAnswerLiteralAddedEvent.cs" />
+    <Compile Include="Logic\FOL\Domain\FOLDomainEvent.cs" />
+    <Compile Include="Logic\FOL\Domain\FOLDomainListener.cs" />
+    <Compile Include="Logic\FOL\Domain\FOLDomainSkolemConstantAddedEvent.cs" />
+    <Compile Include="Logic\FOL\Domain\FOLDomainSkolemFunctionAddedEvent.cs" />
+    <Compile Include="Logic\FOL\Inference\AbstractModulation.cs" />
+    <Compile Include="Logic\FOL\Inference\Demodulation.cs" />
+    <Compile Include="Logic\FOL\Inference\FOLBCAsk.cs" />
+    <Compile Include="Logic\FOL\Inference\FOLFCAsk.cs" />
+    <Compile Include="Logic\FOL\Inference\FOLModelElimination.cs" />
+    <Compile Include="Logic\FOL\Inference\FOLOTTERLikeTheoremProver.cs" />
+    <Compile Include="Logic\FOL\Inference\FOLTFMResolution.cs" />
+    <Compile Include="Logic\FOL\Inference\InferenceProcedure.cs" />
+    <Compile Include="Logic\FOL\Inference\InferenceResult.cs" />
+    <Compile Include="Logic\FOL\Inference\InferenceResultPrinter.cs" />
+    <Compile Include="Logic\FOL\Inference\Otter\ClauseFilter.cs" />
+    <Compile Include="Logic\FOL\Inference\Otter\ClauseSimplifier.cs" />
+    <Compile Include="Logic\FOL\Inference\Otter\DefaultImpl\DefaultClauseFilter.cs" />
+    <Compile Include="Logic\FOL\Inference\Otter\DefaultImpl\DefaultClauseSimplifier.cs" />
+    <Compile Include="Logic\FOL\Inference\Otter\DefaultImpl\DefaultLightestClauseHeuristic.cs" />
+    <Compile Include="Logic\FOL\Inference\Otter\LightestClauseHeuristic.cs" />
+    <Compile Include="Logic\FOL\Inference\Paramodulation.cs" />
+    <Compile Include="Logic\FOL\Inference\Proof\AbstractProofStep.cs" />
+    <Compile Include="Logic\FOL\Inference\Proof\Proof.cs" />
+    <Compile Include="Logic\FOL\Inference\Proof\ProofFinal.cs" />
+    <Compile Include="Logic\FOL\Inference\Proof\ProofPrinter.cs" />
+    <Compile Include="Logic\FOL\Inference\Proof\ProofStep.cs" />
+    <Compile Include="Logic\FOL\Inference\Proof\ProofStepBwChGoal.cs" />
+    <Compile Include="Logic\FOL\Inference\Proof\ProofStepChainCancellation.cs" />
+    <Compile Include="Logic\FOL\Inference\Proof\ProofStepChainContrapositive.cs" />
+    <Compile Include="Logic\FOL\Inference\Proof\ProofStepChainDropped.cs" />
+    <Compile Include="Logic\FOL\Inference\Proof\ProofStepChainFromClause.cs" />
+    <Compile Include="Logic\FOL\Inference\Proof\ProofStepChainReduction.cs" />
+    <Compile Include="Logic\FOL\Inference\Proof\ProofStepClauseBinaryResolvent.cs" />
+    <Compile Include="Logic\FOL\Inference\Proof\ProofStepClauseClausifySentence.cs" />
+    <Compile Include="Logic\FOL\Inference\Proof\ProofStepClauseDemodulation.cs" />
+    <Compile Include="Logic\FOL\Inference\Proof\ProofStepClauseFactor.cs" />
+    <Compile Include="Logic\FOL\Inference\Proof\ProofStepClauseParamodulation.cs" />
+    <Compile Include="Logic\FOL\Inference\Proof\ProofStepFoChAlreadyAFact.cs" />
+    <Compile Include="Logic\FOL\Inference\Proof\ProofStepFoChAssertFact.cs" />
+    <Compile Include="Logic\FOL\Inference\Proof\ProofStepGoal.cs" />
+    <Compile Include="Logic\FOL\Inference\Proof\ProofStepPremise.cs" />
+    <Compile Include="Logic\FOL\Inference\Proof\ProofStepRenaming.cs" />
+    <Compile Include="Logic\FOL\Inference\trace\FOLModelEliminationTracer.cs" />
+    <Compile Include="Logic\FOL\Inference\trace\FOLTFMResolutionTracer.cs" />
+    <Compile Include="Logic\FOL\KB\Data\Chain.cs" />
+    <Compile Include="Logic\FOL\KB\Data\Clause.cs" />
+    <Compile Include="Logic\FOL\KB\Data\CNF.cs" />
+    <Compile Include="Logic\FOL\KB\Data\Literal.cs" />
+    <Compile Include="Logic\FOL\KB\Data\ReducedLiteral.cs" />
+    <Compile Include="Logic\FOL\KB\FOLKnowledgeBase.cs" />
+    <Compile Include="Logic\FOL\KB\FOLKnowledgeBaseFactory.cs" />
+    <Compile Include="Logic\FOL\Parsing\AbstractFOLVisitor.cs" />
+    <Compile Include="Logic\FOL\Parsing\Ast\AtomicSentence.cs" />
+    <Compile Include="Logic\FOL\Parsing\Ast\ConnectedSentence.cs" />
+    <Compile Include="Logic\FOL\Parsing\Ast\Constant.cs" />
+    <Compile Include="Logic\FOL\Parsing\Ast\FOLNode.cs" />
+    <Compile Include="Logic\FOL\Parsing\Ast\Function.cs" />
+    <Compile Include="Logic\FOL\Parsing\Ast\NotSentence.cs" />
+    <Compile Include="Logic\FOL\Parsing\Ast\Predicate.cs" />
+    <Compile Include="Logic\FOL\Parsing\Ast\QuantifiedSentence.cs" />
+    <Compile Include="Logic\FOL\Parsing\Ast\Sentence.cs" />
+    <Compile Include="Logic\FOL\Parsing\Ast\Term.cs" />
+    <Compile Include="Logic\FOL\Parsing\Ast\TermEquality.cs" />
+    <Compile Include="Logic\FOL\Parsing\Ast\Variable.cs" />
+    <Compile Include="Logic\FOL\Parsing\FOLLexer.cs" />
+    <Compile Include="Logic\FOL\Parsing\FOLParser.cs" />
+    <Compile Include="Logic\FOL\Parsing\FOLVisitor.cs" />
+    <Compile Include="Logic\FOL\PredicateCollector.cs" />
+    <Compile Include="Logic\FOL\Quantifiers.cs" />
+    <Compile Include="Logic\FOL\StandardizeApart.cs" />
+    <Compile Include="Logic\FOL\StandardizeApartIndexical.cs" />
+    <Compile Include="Logic\FOL\StandardizeApartIndexicalFactory.cs" />
+    <Compile Include="Logic\FOL\StandardizeApartInPlace.cs" />
+    <Compile Include="Logic\FOL\StandardizeApartResult.cs" />
+    <Compile Include="Logic\FOL\SubstVisitor.cs" />
+    <Compile Include="Logic\FOL\SubsumptionElimination.cs" />
+    <Compile Include="Logic\FOL\Unifier.cs" />
+    <Compile Include="Logic\FOL\VariableCollector.cs" />
+    <Compile Include="Logic\Propositional\Algorithms\DPLL.cs" />
+    <Compile Include="Logic\Propositional\Algorithms\KnowledgeBase.cs" />
+    <Compile Include="Logic\Propositional\Algorithms\LogicUtils.cs" />
+    <Compile Include="Logic\Propositional\Algorithms\Model.cs" />
+    <Compile Include="Logic\Propositional\Algorithms\PLFCEntails.cs" />
+    <Compile Include="Logic\Propositional\Algorithms\PLResolution.cs" />
+    <Compile Include="Logic\Propositional\Algorithms\TTEntails.cs" />
+    <Compile Include="Logic\Propositional\Algorithms\WalkSAT.cs" />
+    <Compile Include="Logic\Propositional\Parsing\AbstractPLVisitor.cs" />
+    <Compile Include="Logic\Propositional\Parsing\Ast\AtomicSentence.cs" />
+    <Compile Include="Logic\Propositional\Parsing\Ast\BinarySentence.cs" />
+    <Compile Include="Logic\Propositional\Parsing\Ast\ComplexSentence.cs" />
+    <Compile Include="Logic\Propositional\Parsing\Ast\FalseSentence.cs" />
+    <Compile Include="Logic\Propositional\Parsing\Ast\MultiSentence.cs" />
+    <Compile Include="Logic\Propositional\Parsing\Ast\Sentence.cs" />
+    <Compile Include="Logic\Propositional\Parsing\Ast\Symbol.cs" />
+    <Compile Include="Logic\Propositional\Parsing\Ast\SymbolComparator.cs" />
+    <Compile Include="Logic\Propositional\Parsing\Ast\TrueSentence.cs" />
+    <Compile Include="Logic\Propositional\Parsing\Ast\UnarySentence.cs" />
+    <Compile Include="Logic\Propositional\Parsing\PELexer.cs" />
+    <Compile Include="Logic\Propositional\Parsing\PEParser.cs" />
+    <Compile Include="Logic\Propositional\Parsing\PLVisitor.cs" />
+    <Compile Include="Logic\Propositional\Visitors\AndDetector.cs" />
+    <Compile Include="Logic\Propositional\Visitors\BasicTraverser.cs" />
+    <Compile Include="Logic\Propositional\Visitors\CNFClauseGatherer.cs" />
+    <Compile Include="Logic\Propositional\Visitors\CNFTransformer.cs" />
+    <Compile Include="Logic\Propositional\Visitors\NegativeSymbolCollector.cs" />
+    <Compile Include="Logic\Propositional\Visitors\PositiveSymbolCollector.cs" />
+    <Compile Include="Logic\Propositional\Visitors\SymbolClassifier.cs" />
+    <Compile Include="Logic\Propositional\Visitors\SymbolCollector.cs" />
+    <Compile Include="Probability\BayesNet.cs" />
+    <Compile Include="Probability\BayesNetNode.cs" />
+    <Compile Include="Probability\Decision\MDP.cs" />
+    <Compile Include="Probability\Decision\MDPFactory.cs" />
+    <Compile Include="Probability\Decision\MDPPerception.cs" />
+    <Compile Include="Probability\Decision\MDPPolicy.cs" />
+    <Compile Include="Probability\Decision\MDPRewardFunction.cs" />
+    <Compile Include="Probability\Decision\MDPSource.cs" />
+    <Compile Include="Probability\Decision\MDPTransition.cs" />
+    <Compile Include="Probability\Decision\MDPTransitionModel.cs" />
+    <Compile Include="Probability\Decision\MDPUtilityFunction.cs" />
+    <Compile Include="Probability\EnumerateJointAsk.cs" />
+    <Compile Include="Probability\EnumerationAsk.cs" />
+    <Compile Include="Probability\JavaRandomizer.cs" />
+    <Compile Include="Probability\ProbabilityDistribution.cs" />
+    <Compile Include="Probability\Query.cs" />
+    <Compile Include="Probability\Randomizer.cs" />
+    <Compile Include="Probability\RandomVariable.cs" />
+    <Compile Include="Probability\Reasoning\FixedLagSmoothing.cs" />
+    <Compile Include="Probability\Reasoning\HiddenMarkovModel.cs" />
+    <Compile Include="Probability\Reasoning\HMMAgent.cs" />
+    <Compile Include="Probability\Reasoning\HmmConstants.cs" />
+    <Compile Include="Probability\Reasoning\HMMFactory.cs" />
+    <Compile Include="Probability\Reasoning\Particle.cs" />
+    <Compile Include="Probability\Reasoning\ParticleSet.cs" />
+    <Compile Include="Probability\Reasoning\SensorModel.cs" />
+    <Compile Include="Probability\Reasoning\TransitionModel.cs" />
+    <Compile Include="Test\Core\Unit\Learning\Framework\DataSetTest.cs" />
+    <Compile Include="Test\Core\Unit\Learning\Framework\InformationAndGainTest.cs" />
+    <Compile Include="Test\Core\Unit\Learning\Framework\MockDataSetSpecification.cs" />
+    <Compile Include="Test\Core\Unit\Learning\Inductive\DecisionListTest.cs" />
+    <Compile Include="Test\Core\Unit\Learning\Inductive\DLTestTest.cs" />
+    <Compile Include="Test\Core\Unit\Learning\Inductive\MockDLTestFactory.cs" />
+    <Compile Include="Test\Core\Unit\Learning\Learners\DecisionTreeTest.cs" />
+    <Compile Include="Test\Core\Unit\Learning\Learners\EnsembleLearningTest.cs" />
+    <Compile Include="Test\Core\Unit\Learning\Learners\LearnerTests.cs" />
+    <Compile Include="Test\Core\Unit\Learning\Neural\BackPropagationTests.cs" />
+    <Compile Include="Test\Core\Unit\Learning\Neural\LayerTests.cs" />
+    <Compile Include="Test\Core\Unit\Learning\Reinforcement\QTableTest.cs" />
+    <Compile Include="Test\Core\Unit\Learning\Reinforcement\ReinforcementLearningTest.cs" />
+    <Compile Include="Test\Core\Unit\Probability\BayesNetNodeTest.cs" />
+    <Compile Include="Test\Core\Unit\Probability\BayesNetTest.cs" />
+    <Compile Include="Test\Core\Unit\Probability\Decision\PolicyIterationTest.cs" />
+    <Compile Include="Test\Core\Unit\Probability\Decision\ValueIterationTest.cs" />
+    <Compile Include="Test\Core\Unit\Probability\EnumerationAskTest.cs" />
+    <Compile Include="Test\Core\Unit\Probability\EnumerationJointAskTest.cs" />
+    <Compile Include="Test\Core\Unit\Probability\MockRandomizer.cs" />
+    <Compile Include="Test\Core\Unit\Probability\ProbabilitySamplingTest.cs" />
+    <Compile Include="Test\Core\Unit\Probability\Reasoning\HMMAgentTest.cs" />
+    <Compile Include="Test\Core\Unit\Probability\Reasoning\HMMTest.cs" />
+    <Compile Include="Test\Core\Unit\Probability\Reasoning\ParticleFilterTest.cs" />
+    <Compile Include="Test\Core\Unit\Probability\Reasoning\RandomVariableTest.cs" />
+    <Compile Include="Test\Core\Unit\Util\DataStructure\FIFOQueueTest.cs" />
+    <Compile Include="Test\Core\Unit\Util\DataStructure\LIFOQueueTest.cs" />
+    <Compile Include="Test\Core\Unit\Util\DataStructure\TableTest.cs" />
+    <Compile Include="Test\Core\Unit\Util\DataStructure\XYLocationTest.cs" />
+    <Compile Include="Test\Core\Unit\Util\Math\MixedRadixNumberTest.cs" />
+    <Compile Include="Test\Core\Unit\Util\SetOpsTest.cs" />
+    <Compile Include="Test\Core\Unit\Util\UtilTest.cs" />
+    <Compile Include="Util\CharBuffer.cs" />
+    <Compile Include="Util\DataStructure\FIFOQueue.cs" />
+    <Compile Include="Util\DataStructure\LIFOQueue.cs" />
+    <Compile Include="Util\DataStructure\Pair.cs" />
+    <Compile Include="Util\DataStructure\Table.cs" />
+    <Compile Include="Util\DataStructure\Triplet.cs" />
+    <Compile Include="Util\DataStructure\XYLocation.cs" />
+    <Compile Include="Util\FrequencyCounter.cs" />
+    <Compile Include="Util\HighResClock.cs" />
+    <Compile Include="Util\Logger.cs" />
+    <Compile Include="Util\Math\LUDecomposition.cs" />
+    <Compile Include="Util\Math\Matrix.cs" />
+    <Compile Include="Util\Math\MixedRadixNumber.cs" />
+    <Compile Include="Util\Math\Vector.cs" />
+    <Compile Include="Util\SetOps.cs" />
+    <Compile Include="Util\StreamTokenizer.cs" />
+    <Compile Include="Util\Token.cs" />
+    <Compile Include="Util\Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource\iris.csv" />
+    <EmbeddedResource Include="Resource\orings.csv" />
+    <EmbeddedResource Include="Resource\rabbiteyes.csv" />
+    <EmbeddedResource Include="Resource\restaurant.csv" />
+    <EmbeddedResource Include="Resource\wordlist" />
+    <EmbeddedResource Include="Resource\zoo.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Learning\Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\devTools\rowlex2.3_all\Rowlex2.3\src Copy\NC3A.SI.Rowlex\NC3A.SI.Rowlex.csproj">
+      <Project>{27F1231D-142E-406E-8EB0-B1A8547F6436}</Project>
+      <Name>NC3A.SI.Rowlex</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
