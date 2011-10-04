@@ -97,17 +97,43 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Presentation" />
     <Reference Include="System.Data">
       <Name>System.Data</Name>
     </Reference>
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
     </Reference>
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activities\Logic\FOL\KB\DomainAddConstantActivity.cs" />
+    <Compile Include="Activities\Logic\FOL\KB\DomainAddConstantDesigner.xaml.cs">
+      <DependentUpon>DomainAddConstantDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Activities\Logic\FOL\KB\DomainAddPredicateActivity.cs" />
+    <Compile Include="Activities\Logic\FOL\KB\DomainAddPredicateDesigner.xaml.cs">
+      <DependentUpon>DomainAddPredicateDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Activities\Logic\FOL\KB\KnowledgeBaseAskActivity.cs" />
+    <Compile Include="Activities\Logic\FOL\KB\KnowledgeBaseAskDesigner.xaml.cs">
+      <DependentUpon>KnowledgeBaseAskDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Activities\Logic\FOL\KB\KnowledgeBaseTellActivity.cs" />
+    <Compile Include="Activities\Logic\FOL\KB\KnowledgeBaseTellDesigner.xaml.cs">
+      <DependentUpon>KnowledgeBaseTellDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Activities\Probability\Reasoning\HMMFactoryActivity.cs" />
+    <Compile Include="Activities\Probability\Reasoning\HMMFactoryDesigner.xaml.cs">
+      <DependentUpon>HMMFactoryDesigner.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -430,10 +456,26 @@
     <Folder Include="Learning\Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\devTools\rowlex2.3_all\Rowlex2.3\src Copy\NC3A.SI.Rowlex\NC3A.SI.Rowlex.csproj">
-      <Project>{27F1231D-142E-406E-8EB0-B1A8547F6436}</Project>
-      <Name>NC3A.SI.Rowlex</Name>
-    </ProjectReference>
+    <Page Include="Activities\Logic\FOL\KB\DomainAddConstantDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Activities\Logic\FOL\KB\DomainAddPredicateDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Activities\Logic\FOL\KB\KnowledgeBaseAskDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Activities\Logic\FOL\KB\KnowledgeBaseTellDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Activities\Probability\Reasoning\HMMFactoryDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -1,0 +1,75 @@
+﻿<sap:ActivityDesigner x:Class="CosmicFlow.AIMA.Logic.FOL.KB.DomainAddPredicateDesigner"
+     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="clr-namespace:System;assembly=mscorlib"                    
+    xmlns:sd="clr-namespace:System.Diagnostics;assembly=System"       
+    xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase"    
+    xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+    xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation"
+    xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation">
+
+    <sap:ActivityDesigner.Resources>
+        <ResourceDictionary x:Uid="ResourceDictionary_1">
+            <sapc:ArgumentToExpressionConverter x:Key="ArgumentToExpressionConverter" />
+            <sapc:ModelToObjectValueConverter x:Key="ModelToObjectValueConverter" />
+
+            <DataTemplate x:Key="Collapsed">
+                <StackPanel Orientation="Horizontal">
+                    <!--Show only the text when collapsed-->
+                    <TextBlock 
+                        VerticalAlignment="Center" 
+                        Margin="5"
+                        >
+                        Double Click To Edit
+                    </TextBlock>
+
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Key="Expanded">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock             
+                        VerticalAlignment="Center"             
+                        Grid.Row="0"            
+                        Grid.Column="0"            
+                        Margin="5" >            
+                        Add Predicate
+                    </TextBlock>
+
+                    <TextBox
+                        Text="{Binding Path=ModelItem.PredicateText, Mode=TwoWay, Converter={StaticResource ModelToObjectValueConverter}}"
+                        Width="300"
+                        Margin="0,5"
+                        Grid.Row="0"
+                        Grid.Column="1"
+
+                        >
+                    </TextBox>
+                </Grid>
+            </DataTemplate>
+
+            <Style x:Key="ExpandOrCollapsedStyle" TargetType="{x:Type ContentPresenter}">
+                <Setter Property="ContentTemplate" Value="{DynamicResource Expanded}"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Path=ShowExpanded}" Value="true">
+                        <Setter Property="ContentTemplate" Value="{DynamicResource Collapsed}"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
+        </ResourceDictionary>
+    </sap:ActivityDesigner.Resources>
+
+    <Grid>
+        <ContentPresenter Style="{DynamicResource ExpandOrCollapsedStyle}" Content="{Binding}" />
+    </Grid>
+
+</sap:ActivityDesigner>

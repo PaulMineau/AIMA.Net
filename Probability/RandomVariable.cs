@@ -5,22 +5,13 @@ namespace CosmicFlow.AIMA.Core.Probability
     using CosmicFlow.AIMA.Core.Probability.Reasoning;
     using CosmicFlow.AIMA.Core.Util;
     using CosmicFlow.AIMA.Core.Util.Math;
-using NC3A.SI.Rowlex;
 
     /**
      * @author Ravi Mohan
      * 
      */
-    [RdfSerializable(HasResourceUri=false)]
     public class RandomVariable
     {
-                [RdfProperty(true,
-            Name = "name",
-            DomainsAsType = new Type[] { typeof(HMMAgent), typeof(RandomVariable) },
-            Domains = new string[] { "http://extradomain.com/10#type3" },
-                    //RangesAsType = new Type[] {typeof(Item)},
-                    //Ranges = new string[] { "http://extradomain2.com/10#type4" },
-            UseLocalRestrictionInsteadOfDomain = false)]
         public string Name { get { return name; }  set { name = value;} }
 
         private String name;

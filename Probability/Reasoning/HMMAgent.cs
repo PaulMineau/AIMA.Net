@@ -1,6 +1,3 @@
-using NC3A.SI.Rowlex;
-[assembly: Ontology("AIMA", "http://www.test.com/AIMA")]
-
 namespace CosmicFlow.AIMA.Core.Probability.Reasoning
 {
     using System;
@@ -12,18 +9,10 @@ namespace CosmicFlow.AIMA.Core.Probability.Reasoning
      * @author Ravi Mohan
      * 
      */
-    [RdfSerializable(HasResourceUri=false)]
     public class HMMAgent
     {
         private HiddenMarkovModel hmm;
 
-        [RdfProperty(true,
-            Name = "belief",
-            DomainsAsType = new Type[] { typeof(HMMAgent), typeof(RandomVariable) },
-            Domains = new string[] { "http://extradomain.com/10#type3" },
-            //RangesAsType = new Type[] {typeof(Item)},
-            //Ranges = new string[] { "http://extradomain2.com/10#type4" },
-            UseLocalRestrictionInsteadOfDomain = false)]
         public RandomVariable Belief { get; set; }
 
         private RandomVariable _belief;

@@ -1,0 +1,116 @@
+﻿<sap:ActivityDesigner x:Class="CosmicFlow.AIMA.Probability.Reasoning.HMMFactoryDesigner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+    xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation"
+    xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation">
+    
+    <sap:ActivityDesigner.Resources>
+        <sapc:ModelToObjectValueConverter x:Key="ModelToObjectValueConverter" />
+        
+        <DataTemplate x:Key="Collapsed">
+            <StackPanel>
+                <TextBlock FontStyle="Oblique" Foreground="Gray">Double-click to view</TextBlock>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="Expanded">
+            <StackPanel>
+                <Border BorderBrush="Green" BorderThickness="4" CornerRadius="2" Margin="3">
+                    <StackPanel>
+                        <TextBlock HorizontalAlignment="Center" FontWeight="Bold">States</TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox x:Name="StateTextBox" Width="150" />
+                        <Button Content="Add" Click="AddStateButton_Click" Width="50" />
+                        </StackPanel>
+                        <ListBox x:Name="StatesListBox" ItemsSource="{Binding Path=ModelItem.States, Mode=TwoWay}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding}" />
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </StackPanel>
+                </Border>
+                <StackPanel>
+                    <Border BorderBrush="Green" BorderThickness="4" CornerRadius="2" Margin="3">
+                        <StackPanel>
+                                <TextBlock HorizontalAlignment="Center" FontWeight="Bold">Perceptions</TextBlock>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBox x:Name="PerceptionTextBox" Width="150" />
+                                    <Button Content="Add" Click="AddPerceptionButton_Click" Width="50" />
+                                </StackPanel>
+                                <ListBox x:Name="PerceptionsListBox" ItemsSource="{Binding Path=ModelItem.Perceptions, Mode=TwoWay}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding}" />
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+                <Border BorderBrush="Red" BorderThickness="4" CornerRadius="2" Margin="3">
+                    <StackPanel>
+                        <TextBlock HorizontalAlignment="Center" FontWeight="Bold">Set Transition Probabilities</TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox x:Name="StartStateTextBox" Width="150" />
+                            <TextBox x:Name="EndStateTextBox" Width="150" />
+                            <TextBox x:Name="ProbabilityTextBox" Width="50" />
+                            <Button Content="Add" Click="AddTransitionProbabilityButton_Click" Width="50" />
+                        </StackPanel>
+                        <ListBox x:Name="TransitionListBox" ItemsSource="{Binding Path=ModelItem.TransitionProbabilities, Mode=TwoWay}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Path=First}" />
+                                        <TextBlock Text=" -> " />
+                                        <TextBlock Text="{Binding Path=Second}" />
+                                        <TextBlock Text=" Probability = " />
+                                        <TextBlock Text="{Binding Path=Third}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </StackPanel>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="4" CornerRadius="2" Margin="3">
+                    <StackPanel>
+                        <TextBlock HorizontalAlignment="Center" FontWeight="Bold">Set Sensing Probabilities</TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox x:Name="SensedStateTextBox" Width="150" />
+                            <TextBox x:Name="SensedPerceptionTextBox" Width="150" />
+                            <TextBox x:Name="SensingProbabilityTextBox" Width="50" />
+                            <Button Content="Add" Click="AddSensingProbabilityButton_Click" Width="50" />
+                        </StackPanel>
+                        <ListBox x:Name="SensingProbabilitiesListBox" ItemsSource="{Binding Path=ModelItem.SensingProbabilities, Mode=TwoWay}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Path=First}" />
+                                        <TextBlock Text=" -> " />
+                                        <TextBlock Text="{Binding Path=Second}" />
+                                        <TextBlock Text=" Probability = " />
+                                        <TextBlock Text="{Binding Path=Third}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </DataTemplate>
+        <Style x:Key="ExpandOrCollapsedStyle" TargetType="{x:Type ContentPresenter}">
+            <Setter Property="ContentTemplate" Value="{DynamicResource Expanded}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Path=ShowExpanded}" Value="false">
+                    <Setter Property="ContentTemplate" Value="{DynamicResource Collapsed}"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </sap:ActivityDesigner.Resources>
+
+    <Grid>
+        <ContentPresenter Style="{DynamicResource ExpandOrCollapsedStyle}" Content="{Binding}" />
+    </Grid>
+
+</sap:ActivityDesigner>
