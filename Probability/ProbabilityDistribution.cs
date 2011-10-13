@@ -1,4 +1,4 @@
-namespace CosmicFlow.AIMA.Core.Probability
+namespace AIMA.Core.Probability
 {
     using System;
     using System.Collections.Generic;

@@ -1,8 +1,8 @@
-namespace CosmicFlow.AIMA.Core.Logic.Propositional.Algorithms
+namespace AIMA.Core.Logic.Propositional.Algorithms
 {
     using System;
     using System.Collections.Generic;
-    using CosmicFlow.AIMA.Core.Logic.Propositional.Parsing.Ast;
+    using AIMA.Core.Logic.Propositional.Parsing.Ast;
 
     /**
      * @author Ravi Mohan

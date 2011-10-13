@@ -1,10 +1,10 @@
-namespace CosmicFlow.AIMA.Core.Learning.Learners
+namespace AIMA.Core.Learning.Learners
 {
     using System;
     using System.Collections.Generic;
-    using CosmicFlow.AIMA.Core.Learning.Framework;
-    using CosmicFlow.AIMA.Core.Util;
-    using CosmicFlow.AIMA.Core.Util.DataStructure;
+    using AIMA.Core.Learning.Framework;
+    using AIMA.Core.Util;
+    using AIMA.Core.Util.DataStructure;
 
     /**
      * @author Ravi Mohan

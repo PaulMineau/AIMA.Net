@@ -1,16 +1,16 @@
-namespace CosmicFlow.AIMA.Test.Core.Unit.Logic.Fol.Inference
+namespace AIMA.Test.Core.Unit.Logic.Fol.Inference
 {
 
 
-    using CosmicFlow.AIMA.Core.Logic.FOL;
-    using CosmicFlow.AIMA.Core.Logic.FOL.Domain;
-    using CosmicFlow.AIMA.Core.Logic.FOL.Inference;
-    using CosmicFlow.AIMA.Core.Logic.FOL.Inference.Otter.DefaultImpl;
-    using CosmicFlow.AIMA.Core.Logic.FOL.KB;
-    using CosmicFlow.AIMA.Core.Logic.FOL.KB.Data;
-    using CosmicFlow.AIMA.Core.Logic.FOL.Parsing;
-    using CosmicFlow.AIMA.Core.Logic.FOL.Parsing.AST;
-    using CosmicFlow.AIMA.Test.Core.Unit.Logic.FOL;
+    using AIMA.Core.Logic.FOL;
+    using AIMA.Core.Logic.FOL.Domain;
+    using AIMA.Core.Logic.FOL.Inference;
+    using AIMA.Core.Logic.FOL.Inference.Otter.DefaultImpl;
+    using AIMA.Core.Logic.FOL.KB;
+    using AIMA.Core.Logic.FOL.KB.Data;
+    using AIMA.Core.Logic.FOL.Parsing;
+    using AIMA.Core.Logic.FOL.Parsing.AST;
+    using AIMA.Test.Core.Unit.Logic.FOL;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Collections.Generic;
     using System;

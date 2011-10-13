@@ -1,8 +1,8 @@
-namespace CosmicFlow.AIMA.Core.Learning.Inductive
+namespace AIMA.Core.Learning.Inductive
 {
     using System;
     using System.Collections.Generic;
-    using CosmicFlow.AIMA.Core.Learning.Framework;
+    using AIMA.Core.Learning.Framework;
 
     /**
      * @author Ravi Mohan

@@ -1,4 +1,4 @@
-namespace CosmicFlow.AIMA.Core.Logic.FOL.Inference.Proof
+namespace AIMA.Core.Logic.FOL.Inference.Proof
 {
     using System;
     using System.Collections.Generic;

@@ -1,9 +1,9 @@
-namespace CosmicFlow.AIMA.Core.Logic.FOL.Inference
+namespace AIMA.Core.Logic.FOL.Inference
 {
     using System;
     using System.Collections.Generic;
-    using CosmicFlow.AIMA.Core.Logic.FOL.KB;
-    using CosmicFlow.AIMA.Core.Logic.FOL.Parsing.AST;
+    using AIMA.Core.Logic.FOL.KB;
+    using AIMA.Core.Logic.FOL.Parsing.AST;
 
     /**
      * @author Ciaran O'Reilly

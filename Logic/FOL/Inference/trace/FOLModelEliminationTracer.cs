@@ -1,4 +1,4 @@
-namespace CosmicFlow.AIMA.Core.Logic.FOL.Inference.Trace
+namespace AIMA.Core.Logic.FOL.Inference.Trace
 {
     using System;
     using System.Collections.Generic;

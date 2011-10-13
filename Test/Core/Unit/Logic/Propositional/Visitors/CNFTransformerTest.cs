@@ -1,9 +1,9 @@
-namespace CosmicFlow.AIMA.Test.Core.Unit.Logic.Propositional.Visitors
+namespace AIMA.Test.Core.Unit.Logic.Propositional.Visitors
 {
 
-    using CosmicFlow.AIMA.Core.Logic.Propositional.Parsing;
-    using CosmicFlow.AIMA.Core.Logic.Propositional.Parsing.Ast;
-    using CosmicFlow.AIMA.Core.Logic.Propositional.Visitors;
+    using AIMA.Core.Logic.Propositional.Parsing;
+    using AIMA.Core.Logic.Propositional.Parsing.Ast;
+    using AIMA.Core.Logic.Propositional.Visitors;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     /**

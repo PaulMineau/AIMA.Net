@@ -1,4 +1,4 @@
-namespace CosmicFlow.AIMA.Core.Logic.Propositional.Parsing.Ast
+namespace AIMA.Core.Logic.Propositional.Parsing.Ast
 {
 
     /**

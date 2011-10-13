@@ -1,10 +1,10 @@
-namespace CosmicFlow.AIMA.Core.Logic.FOL.Inference.Otter.DefaultImpl
+namespace AIMA.Core.Logic.FOL.Inference.Otter.DefaultImpl
 {
 
-    using CosmicFlow.AIMA.Core.Logic.FOL.Inference;
-    using CosmicFlow.AIMA.Core.Logic.FOL.Inference.Otter;
-    using CosmicFlow.AIMA.Core.Logic.FOL.KB.Data;
-    using CosmicFlow.AIMA.Core.Logic.FOL.Parsing.AST;
+    using AIMA.Core.Logic.FOL.Inference;
+    using AIMA.Core.Logic.FOL.Inference.Otter;
+    using AIMA.Core.Logic.FOL.KB.Data;
+    using AIMA.Core.Logic.FOL.Parsing.AST;
     using System;
     using System.Collections.Generic;
     using System.Linq;

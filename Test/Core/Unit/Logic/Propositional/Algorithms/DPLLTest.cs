@@ -1,11 +1,11 @@
-namespace CosmicFlow.AIMA.Test.Core.Unit.Logic.Propositional.Algorithms
+namespace AIMA.Test.Core.Unit.Logic.Propositional.Algorithms
 {
 
-    using CosmicFlow.AIMA.Core.Logic.Propositional.Algorithms;
-    using CosmicFlow.AIMA.Core.Logic.Propositional.Parsing;
-    using CosmicFlow.AIMA.Core.Logic.Propositional.Parsing.Ast;
-    using CosmicFlow.AIMA.Core.Logic.Propositional.Visitors;
-    using CosmicFlow.AIMA.Core.Util;
+    using AIMA.Core.Logic.Propositional.Algorithms;
+    using AIMA.Core.Logic.Propositional.Parsing;
+    using AIMA.Core.Logic.Propositional.Parsing.Ast;
+    using AIMA.Core.Logic.Propositional.Visitors;
+    using AIMA.Core.Util;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Collections.Generic;
 

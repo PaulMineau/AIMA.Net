@@ -1,9 +1,9 @@
-namespace CosmicFlow.AIMA.Test.Core.Unit.Learning.Framework
+namespace AIMA.Test.Core.Unit.Learning.Framework
 {
 
-    using CosmicFlow.AIMA.Core.Learning.Framework;
-    using CosmicFlow.AIMA.Core.Learning.Neural;
-    using CosmicFlow.AIMA.Core.Util.DataStructure;
+    using AIMA.Core.Learning.Framework;
+    using AIMA.Core.Learning.Neural;
+    using AIMA.Core.Util.DataStructure;
     using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Collections.Generic;

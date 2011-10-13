@@ -11,9 +11,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using CosmicFlow.AIMA.Core.Util.DataStructure;
+using AIMA.Core.Util.DataStructure;
 
-namespace CosmicFlow.AIMA.Probability.Reasoning
+namespace AIMA.Probability.Reasoning
 {
     // Interaction logic for HMMFactoryDesigner.xaml
     public partial class HMMFactoryDesigner

@@ -1,8 +1,8 @@
-namespace CosmicFlow.AIMA.Test.Core.Unit.Learning.Reinforcement
+namespace AIMA.Test.Core.Unit.Learning.Reinforcement
 {
 
 
-    using CosmicFlow.AIMA.Core.Learning.Reinforcement;
+    using AIMA.Core.Learning.Reinforcement;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
     using System.Collections.Generic;

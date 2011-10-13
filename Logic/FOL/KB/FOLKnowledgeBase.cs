@@ -1,16 +1,16 @@
-namespace CosmicFlow.AIMA.Core.Logic.FOL.KB
+namespace AIMA.Core.Logic.FOL.KB
 {
     using System;
     using System.Collections.Generic;
     using System.Text;
     using System.Linq;
-    using CosmicFlow.AIMA.Core.Logic.FOL;
-    using CosmicFlow.AIMA.Core.Logic.FOL.Inference;
-    using CosmicFlow.AIMA.Core.Logic.FOL.KB.Data;
-    using CosmicFlow.AIMA.Core.Logic.FOL.Parsing;
-    using CosmicFlow.AIMA.Core.Logic.FOL.Parsing.AST;
-    using CosmicFlow.AIMA.Core.Logic.FOL.Domain;
-    using CosmicFlow.AIMA.Core.Logic.FOL.Inference.Proof;
+    using AIMA.Core.Logic.FOL;
+    using AIMA.Core.Logic.FOL.Inference;
+    using AIMA.Core.Logic.FOL.KB.Data;
+    using AIMA.Core.Logic.FOL.Parsing;
+    using AIMA.Core.Logic.FOL.Parsing.AST;
+    using AIMA.Core.Logic.FOL.Domain;
+    using AIMA.Core.Logic.FOL.Inference.Proof;
 
 
     /**

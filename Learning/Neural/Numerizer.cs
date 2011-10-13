@@ -1,9 +1,9 @@
-namespace CosmicFlow.AIMA.Core.Learning.Neural
+namespace AIMA.Core.Learning.Neural
 {
     using System;
     using System.Collections.Generic;
-    using CosmicFlow.AIMA.Core.Learning.Framework;
-    using CosmicFlow.AIMA.Core.Util.DataStructure;
+    using AIMA.Core.Learning.Framework;
+    using AIMA.Core.Util.DataStructure;
 
     /**
      * @author Ravi Mohan

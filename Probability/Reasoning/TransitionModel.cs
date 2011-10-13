@@ -1,9 +1,9 @@
-namespace CosmicFlow.AIMA.Core.Probability.Reasoning
+namespace AIMA.Core.Probability.Reasoning
 {
     using System;
     using System.Collections.Generic;
-    using CosmicFlow.AIMA.Core.Util.DataStructure;
-    using CosmicFlow.AIMA.Core.Util.Math;
+    using AIMA.Core.Util.DataStructure;
+    using AIMA.Core.Util.Math;
 
     /**
      * @author Ravi Mohan

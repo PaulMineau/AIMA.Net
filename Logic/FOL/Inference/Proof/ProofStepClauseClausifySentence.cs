@@ -1,10 +1,10 @@
-namespace CosmicFlow.AIMA.Core.Logic.FOL.Inference.Proof
+namespace AIMA.Core.Logic.FOL.Inference.Proof
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using CosmicFlow.AIMA.Core.Logic.FOL.KB.Data;
-    using CosmicFlow.AIMA.Core.Logic.FOL.Parsing.AST;
+    using AIMA.Core.Logic.FOL.KB.Data;
+    using AIMA.Core.Logic.FOL.Parsing.AST;
     using System.Collections.ObjectModel;
 
     /**

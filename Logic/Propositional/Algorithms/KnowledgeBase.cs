@@ -1,10 +1,10 @@
-namespace CosmicFlow.AIMA.Core.Logic.Propositional.Algorithms
+namespace AIMA.Core.Logic.Propositional.Algorithms
 {
     using System;
     using System.Collections.Generic;
-    using CosmicFlow.AIMA.Core.Logic.Propositional.Parsing;
-    using CosmicFlow.AIMA.Core.Logic.Propositional.Visitors;
-    using CosmicFlow.AIMA.Core.Logic.Propositional.Parsing.Ast;
+    using AIMA.Core.Logic.Propositional.Parsing;
+    using AIMA.Core.Logic.Propositional.Visitors;
+    using AIMA.Core.Logic.Propositional.Parsing.Ast;
 
     /**
      * @author Ravi Mohan

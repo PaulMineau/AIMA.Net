@@ -1,8 +1,8 @@
-namespace CosmicFlow.AIMA.Test.Core.Unit.Logic.Fol.Inference
+namespace AIMA.Test.Core.Unit.Logic.Fol.Inference
 {
 
-    using CosmicFlow.AIMA.Core.Logic.FOL.Inference;
-    using CosmicFlow.AIMA.Test.Core.Unit.Logic.FOL;
+    using AIMA.Core.Logic.FOL.Inference;
+    using AIMA.Test.Core.Unit.Logic.FOL;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     /**

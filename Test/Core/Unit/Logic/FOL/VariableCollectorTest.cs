@@ -1,10 +1,10 @@
-namespace CosmicFlow.AIMA.Test.Core.Unit.Logic.FOL
+namespace AIMA.Test.Core.Unit.Logic.FOL
 {
 
-    using CosmicFlow.AIMA.Core.Logic.FOL;
-    using CosmicFlow.AIMA.Core.Logic.FOL.Domain;
-    using CosmicFlow.AIMA.Core.Logic.FOL.Parsing;
-    using CosmicFlow.AIMA.Core.Logic.FOL.Parsing.AST;
+    using AIMA.Core.Logic.FOL;
+    using AIMA.Core.Logic.FOL.Domain;
+    using AIMA.Core.Logic.FOL.Parsing;
+    using AIMA.Core.Logic.FOL.Parsing.AST;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Collections.Generic;
 

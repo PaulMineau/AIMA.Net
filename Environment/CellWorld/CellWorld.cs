@@ -1,10 +1,10 @@
-namespace CosmicFlow.AIMA.Core.Environment.CellWorld
+namespace AIMA.Core.Environment.CellWorld
 {
     using System;
     using System.Collections.Generic;
-    using CosmicFlow.AIMA.Core.Probability;
-    using CosmicFlow.AIMA.Core.Probability.Decision;
-    using CosmicFlow.AIMA.Core.Util.DataStructure;
+    using AIMA.Core.Probability;
+    using AIMA.Core.Probability.Decision;
+    using AIMA.Core.Util.DataStructure;
 
     /**
      * @author Ravi Mohan

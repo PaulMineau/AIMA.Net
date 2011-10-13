@@ -1,9 +1,9 @@
-namespace CosmicFlow.AIMA.Test.Core.Unit.Logic.Propositional.Algorithms
+namespace AIMA.Test.Core.Unit.Logic.Propositional.Algorithms
 {
 
 
 
-    using CosmicFlow.AIMA.Core.Logic.Propositional.Algorithms;
+    using AIMA.Core.Logic.Propositional.Algorithms;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     /**

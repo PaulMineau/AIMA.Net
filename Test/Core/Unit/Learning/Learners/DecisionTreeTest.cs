@@ -1,10 +1,10 @@
-namespace CosmicFlow.AIMA.Test.Core.Unit.Learning.Learners
+namespace AIMA.Test.Core.Unit.Learning.Learners
 {
 
-    using CosmicFlow.AIMA.Core.Learning.Framework;
-    using CosmicFlow.AIMA.Core.Learning.Inductive;
-    using CosmicFlow.AIMA.Core.Learning.Learners;
-    using CosmicFlow.AIMA.Core.Util;
+    using AIMA.Core.Learning.Framework;
+    using AIMA.Core.Learning.Inductive;
+    using AIMA.Core.Learning.Learners;
+    using AIMA.Core.Util;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
     using System.Collections.Generic;

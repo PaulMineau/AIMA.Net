@@ -6,11 +6,11 @@ using System.Activities;
 using System.Windows.Markup;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using CosmicFlow.AIMA.Core.Probability.Reasoning;
-using CosmicFlow.AIMA.Core.Util.DataStructure;
-using CosmicFlow.AIMA.Core.Probability;
+using AIMA.Core.Probability.Reasoning;
+using AIMA.Core.Util.DataStructure;
+using AIMA.Core.Probability;
 
-namespace CosmicFlow.AIMA.Probability.Reasoning
+namespace AIMA.Probability.Reasoning
 {
     /// <summary>
     /// An activity that executes child activities in order and supports a pre/post activity

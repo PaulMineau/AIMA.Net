@@ -1,4 +1,4 @@
-namespace CosmicFlow.AIMA.Core.Logic.FOL.KB.Data
+namespace AIMA.Core.Logic.FOL.KB.Data
 {
     using System;
     using System.Collections;

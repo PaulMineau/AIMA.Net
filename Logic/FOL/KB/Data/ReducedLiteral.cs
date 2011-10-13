@@ -1,9 +1,9 @@
-namespace CosmicFlow.AIMA.Core.Logic.FOL.KB.Data
+namespace AIMA.Core.Logic.FOL.KB.Data
 {
     using System;
     using System.Collections;
     using System.Text;
-    using CosmicFlow.AIMA.Core.Logic.FOL.Parsing.AST;
+    using AIMA.Core.Logic.FOL.Parsing.AST;
 
 
     /**

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 
-namespace CosmicFlow.AIMA.Core.Util
+namespace AIMA.Core.Util
 {
 
     /**

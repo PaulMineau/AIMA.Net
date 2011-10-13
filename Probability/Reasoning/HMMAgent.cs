@@ -1,8 +1,8 @@
-namespace CosmicFlow.AIMA.Core.Probability.Reasoning
+namespace AIMA.Core.Probability.Reasoning
 {
     using System;
     using System.Collections.Generic;
-    using CosmicFlow.AIMA.Core.Probability;
+    using AIMA.Core.Probability;
 
 
     /**

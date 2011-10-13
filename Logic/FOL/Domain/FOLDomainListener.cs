@@ -1,4 +1,4 @@
-namespace CosmicFlow.AIMA.Core.Logic.FOL.Domain
+namespace AIMA.Core.Logic.FOL.Domain
 {
     using System;
     using System.Collections.Generic;

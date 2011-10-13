@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CosmicFlow.AIMA.Logic.FOL.KB
+namespace AIMA.Logic.FOL.KB
 {
     public partial class DomainAddConstantDesigner
     {

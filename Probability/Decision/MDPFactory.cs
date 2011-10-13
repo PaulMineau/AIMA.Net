@@ -1,9 +1,9 @@
-namespace CosmicFlow.AIMA.Core.Probability.Decision
+namespace AIMA.Core.Probability.Decision
 {
     using System;
     using System.Collections.Generic;
-    using CosmicFlow.AIMA.Core.Environment;
-    using CosmicFlow.AIMA.Core.Environment.CellWorld;
+    using AIMA.Core.Environment;
+    using AIMA.Core.Environment.CellWorld;
 
     /**
      * @author Ravi Mohan

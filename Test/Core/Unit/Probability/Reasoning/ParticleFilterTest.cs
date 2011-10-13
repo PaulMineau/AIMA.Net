@@ -1,8 +1,8 @@
-namespace CosmicFlow.AIMA.Test.Core.Unit.Probability.Reasoning
+namespace AIMA.Test.Core.Unit.Probability.Reasoning
 {
 
-    using CosmicFlow.AIMA.Core.Probability;
-    using CosmicFlow.AIMA.Core.Probability.Reasoning;
+    using AIMA.Core.Probability;
+    using AIMA.Core.Probability.Reasoning;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
 

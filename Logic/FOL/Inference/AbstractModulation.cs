@@ -1,10 +1,10 @@
-namespace CosmicFlow.AIMA.Core.Logic.FOL.Inference
+namespace AIMA.Core.Logic.FOL.Inference
 {
     using System;
     using System.Collections.Generic;
-    using CosmicFlow.AIMA.Core.Logic.FOL;
-    using CosmicFlow.AIMA.Core.Logic.FOL.Parsing;
-    using CosmicFlow.AIMA.Core.Logic.FOL.Parsing.AST;
+    using AIMA.Core.Logic.FOL;
+    using AIMA.Core.Logic.FOL.Parsing;
+    using AIMA.Core.Logic.FOL.Parsing.AST;
 
     /**
      * Abstract base class for Demodulation and Paramodulation algorithms. 

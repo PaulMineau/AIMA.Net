@@ -1,9 +1,9 @@
-namespace CosmicFlow.AIMA.Test.Core.Unit
+namespace AIMA.Test.Core.Unit
 {
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Collections.Generic;
-    using CosmicFlow.AIMA.Core.Util;
+    using AIMA.Core.Util;
 
 /**
  * @author Ravi Mohan

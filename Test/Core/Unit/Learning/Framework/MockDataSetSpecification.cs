@@ -1,8 +1,8 @@
-namespace CosmicFlow.AIMA.Test.Core.Unit.Learning.Framework
+namespace AIMA.Test.Core.Unit.Learning.Framework
 {
 
 
-    using CosmicFlow.AIMA.Core.Learning.Framework;
+    using AIMA.Core.Learning.Framework;
     using System;
     using System.Collections.Generic;
 

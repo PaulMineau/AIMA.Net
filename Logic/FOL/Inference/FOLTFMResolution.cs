@@ -1,14 +1,14 @@
-namespace CosmicFlow.AIMA.Core.Logic.FOL.Inference
+namespace AIMA.Core.Logic.FOL.Inference
 {
     using System;
     using System.Collections.Generic;
     using System.Text;
-    using CosmicFlow.AIMA.Core.Logic.FOL;
-    using CosmicFlow.AIMA.Core.Logic.FOL.Inference.Proof;
-    using CosmicFlow.AIMA.Core.Logic.FOL.Inference.Trace;
-    using CosmicFlow.AIMA.Core.Logic.FOL.KB;
-    using CosmicFlow.AIMA.Core.Logic.FOL.KB.Data;
-    using CosmicFlow.AIMA.Core.Logic.FOL.Parsing.AST;
+    using AIMA.Core.Logic.FOL;
+    using AIMA.Core.Logic.FOL.Inference.Proof;
+    using AIMA.Core.Logic.FOL.Inference.Trace;
+    using AIMA.Core.Logic.FOL.KB;
+    using AIMA.Core.Logic.FOL.KB.Data;
+    using AIMA.Core.Logic.FOL.Parsing.AST;
 
     /**
      * Artificial Intelligence A Modern Approach (3rd Edition): page 347.

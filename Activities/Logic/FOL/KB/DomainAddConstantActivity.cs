@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Activities;
 using System.ComponentModel;
-using CosmicFlow.AIMA.Core.Logic.FOL.KB;
-using CosmicFlow.AIMA.Core.Logic.FOL.Inference;
-using CosmicFlow.AIMA.Core.Logic.FOL.Domain;
+using AIMA.Core.Logic.FOL.KB;
+using AIMA.Core.Logic.FOL.Inference;
+using AIMA.Core.Logic.FOL.Domain;
 
-namespace CosmicFlow.AIMA.Logic.FOL.KB
+namespace AIMA.Logic.FOL.KB
 {
     [Designer(typeof(DomainAddConstantDesigner))]
     public sealed class DomainAddConstantActivity : CodeActivity

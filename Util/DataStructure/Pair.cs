@@ -1,4 +1,4 @@
-namespace CosmicFlow.AIMA.Core.Util.DataStructure
+namespace AIMA.Core.Util.DataStructure
 {
     using System;
     using System.Collections.Generic;

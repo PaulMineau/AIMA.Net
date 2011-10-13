@@ -1,4 +1,4 @@
-namespace CosmicFlow.AIMA.Core.Environment.CellWorld
+namespace AIMA.Core.Environment.CellWorld
 {
     using System;
     using System.Collections.Generic;

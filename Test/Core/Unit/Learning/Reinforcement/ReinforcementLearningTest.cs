@@ -1,12 +1,12 @@
-namespace CosmicFlow.AIMA.Test.Core.Unit.Learning.Reinforcement
+namespace AIMA.Test.Core.Unit.Learning.Reinforcement
 {
 
-    using CosmicFlow.AIMA.Core.Environment.CellWorld;
-    using CosmicFlow.AIMA.Core.Learning.Reinforcement;
-    using CosmicFlow.AIMA.Core.Probability;
-    using CosmicFlow.AIMA.Core.Probability.Decision;
-    using CosmicFlow.AIMA.Core.Util.DataStructure;
-    using CosmicFlow.AIMA.Test.Core.Unit.Probability;
+    using AIMA.Core.Environment.CellWorld;
+    using AIMA.Core.Learning.Reinforcement;
+    using AIMA.Core.Probability;
+    using AIMA.Core.Probability.Decision;
+    using AIMA.Core.Util.DataStructure;
+    using AIMA.Test.Core.Unit.Probability;
     using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Collections.Generic;

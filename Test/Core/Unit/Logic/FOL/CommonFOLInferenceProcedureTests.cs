@@ -1,10 +1,10 @@
-namespace CosmicFlow.AIMA.Test.Core.Unit.Logic.FOL
+namespace AIMA.Test.Core.Unit.Logic.FOL
 {
 
-    using CosmicFlow.AIMA.Core.Logic.FOL.Inference;
-    using CosmicFlow.AIMA.Core.Logic.FOL.Inference.Proof;
-    using CosmicFlow.AIMA.Core.Logic.FOL.KB;
-    using CosmicFlow.AIMA.Core.Logic.FOL.Parsing.AST;
+    using AIMA.Core.Logic.FOL.Inference;
+    using AIMA.Core.Logic.FOL.Inference.Proof;
+    using AIMA.Core.Logic.FOL.KB;
+    using AIMA.Core.Logic.FOL.Parsing.AST;
     using System.Collections.Generic;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 

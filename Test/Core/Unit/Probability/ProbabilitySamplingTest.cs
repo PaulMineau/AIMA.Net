@@ -1,7 +1,7 @@
-namespace CosmicFlow.AIMA.Test.Core.Unit.Probability
+namespace AIMA.Test.Core.Unit.Probability
 {
 
-    using CosmicFlow.AIMA.Core.Probability;
+    using AIMA.Core.Probability;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Collections.Generic;
     using System;

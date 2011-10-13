@@ -1,4 +1,4 @@
-namespace CosmicFlow.AIMA.Core.Logic.FOL.Parsing.AST
+namespace AIMA.Core.Logic.FOL.Parsing.AST
 {
     using System;
     using System.Collections.Generic;

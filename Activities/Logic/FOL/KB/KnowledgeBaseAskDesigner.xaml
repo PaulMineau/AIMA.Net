@@ -1,4 +1,4 @@
-﻿<sap:ActivityDesigner x:Class="CosmicFlow.AIMA.Logic.FOL.KB.KnowledgeBaseAskDesigner"
+﻿<sap:ActivityDesigner x:Class="AIMA.Logic.FOL.KB.KnowledgeBaseAskDesigner"
      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:s="clr-namespace:System;assembly=mscorlib"                    

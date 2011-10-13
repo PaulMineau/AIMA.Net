@@ -1,9 +1,9 @@
-namespace CosmicFlow.AIMA.Core.Logic.FOL
+namespace AIMA.Core.Logic.FOL
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using CosmicFlow.AIMA.Core.Logic.FOL.Parsing.AST;
+    using AIMA.Core.Logic.FOL.Parsing.AST;
 
     /**
      * Artificial Intelligence A Modern Approach (3rd Edition): Figure 9.1, page 328.

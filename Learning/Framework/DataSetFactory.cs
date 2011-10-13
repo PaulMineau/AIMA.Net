@@ -1,8 +1,8 @@
-namespace CosmicFlow.AIMA.Core.Learning.Framework
+namespace AIMA.Core.Learning.Framework
 {
     using System;
     using System.Collections.Generic;
-using CosmicFlow.AIMA.Core.Util;
+using AIMA.Core.Util;
     using System.IO;
     using System.Reflection;
     using RTools.Util;

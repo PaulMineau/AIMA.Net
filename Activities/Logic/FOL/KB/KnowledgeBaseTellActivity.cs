@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Activities;
 using System.ComponentModel;
-using CosmicFlow.AIMA.Core.Logic.FOL.KB;
+using AIMA.Core.Logic.FOL.KB;
 
-namespace CosmicFlow.AIMA.Logic.FOL.KB
+namespace AIMA.Logic.FOL.KB
 {
     [Designer(typeof(KnowledgeBaseTellDesigner))]
     public sealed class KnowledgeBaseTellActivity : CodeActivity

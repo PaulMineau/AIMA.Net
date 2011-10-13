@@ -1,8 +1,8 @@
-namespace CosmicFlow.AIMA.Core.Logic.Propositional.Parsing
+namespace AIMA.Core.Logic.Propositional.Parsing
 {
     using System;
     using System.Collections.Generic;
-    using CosmicFlow.AIMA.Core.Logic.Common;
+    using AIMA.Core.Logic.Common;
     using System.Text;
 
     /**

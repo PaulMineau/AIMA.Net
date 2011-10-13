@@ -1,11 +1,11 @@
-namespace CosmicFlow.AIMA.Core.Learning.Learners
+namespace AIMA.Core.Learning.Learners
 {
     using System;
     using System.Collections.Generic;
-    using CosmicFlow.AIMA.Core.Learning.Framework;
-    using CosmicFlow.AIMA.Core.Learning.Knowledge;
-    using CosmicFlow.AIMA.Core.Logic.FOL.Inference;
-    using CosmicFlow.AIMA.Core.Logic.FOL.KB;
+    using AIMA.Core.Learning.Framework;
+    using AIMA.Core.Learning.Knowledge;
+    using AIMA.Core.Logic.FOL.Inference;
+    using AIMA.Core.Logic.FOL.KB;
 
     /**
      * @author Ciaran O'Reilly

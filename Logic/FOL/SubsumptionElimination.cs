@@ -1,8 +1,8 @@
-namespace CosmicFlow.AIMA.Core.Logic.FOL
+namespace AIMA.Core.Logic.FOL
 {
     using System;
     using System.Collections.Generic;
-    using CosmicFlow.AIMA.Core.Logic.FOL.KB.Data;
+    using AIMA.Core.Logic.FOL.KB.Data;
 
     /**
      * Artificial Intelligence A Modern Approach (3rd Edition): page 356.

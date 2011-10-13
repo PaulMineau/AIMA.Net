@@ -1,7 +1,7 @@
-namespace CosmicFlow.AIMA.Test.Core.Unit
+namespace AIMA.Test.Core.Unit
 {
 
-using CosmicFlow.AIMA.Core.Util.DataStructure;
+using AIMA.Core.Util.DataStructure;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
     using System.Collections.Generic;

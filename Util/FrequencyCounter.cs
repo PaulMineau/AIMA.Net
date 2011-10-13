@@ -1,4 +1,4 @@
-namespace CosmicFlow.AIMA.Core.Util
+namespace AIMA.Core.Util
 {
     using System;
     using System.Collections.Generic;

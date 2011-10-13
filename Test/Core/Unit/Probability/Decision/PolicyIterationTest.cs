@@ -1,8 +1,8 @@
-namespace CosmicFlow.AIMA.Test.Core.Unit.Probability.Decision
+namespace AIMA.Test.Core.Unit.Probability.Decision
 {
 
-    using CosmicFlow.AIMA.Core.Environment.CellWorld;
-    using CosmicFlow.AIMA.Core.Probability.Decision;
+    using AIMA.Core.Environment.CellWorld;
+    using AIMA.Core.Probability.Decision;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
 

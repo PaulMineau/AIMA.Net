@@ -1,4 +1,4 @@
-namespace CosmicFlow.AIMA.Core.Learning.Neural
+namespace AIMA.Core.Learning.Neural
 {
     using System;
     using System.Collections.Generic;

@@ -1,8 +1,8 @@
-namespace CosmicFlow.AIMA.Test.Core.Unit.Learning.Inductive
+namespace AIMA.Test.Core.Unit.Learning.Inductive
 {
 
-    using CosmicFlow.AIMA.Core.Learning.Framework;
-    using CosmicFlow.AIMA.Core.Learning.Inductive;
+    using AIMA.Core.Learning.Framework;
+    using AIMA.Core.Learning.Inductive;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     /**

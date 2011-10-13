@@ -1,4 +1,4 @@
-namespace CosmicFlow.AIMA.Core.Learning.Framework
+namespace AIMA.Core.Learning.Framework
 {
     using System;
     using System.Collections.Generic;

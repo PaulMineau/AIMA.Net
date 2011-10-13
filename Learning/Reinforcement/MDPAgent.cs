@@ -1,9 +1,9 @@
-namespace CosmicFlow.AIMA.Core.Learning.Reinforcement
+namespace AIMA.Core.Learning.Reinforcement
 {
     using System;
     using System.Collections.Generic;
-    using CosmicFlow.AIMA.Core.Probability;
-    using CosmicFlow.AIMA.Core.Probability.Decision;
+    using AIMA.Core.Probability;
+    using AIMA.Core.Probability.Decision;
 
     /**
      * @author Ravi Mohan
