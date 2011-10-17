@@ -8,9 +8,8 @@ namespace AIMA.Core.Environment.Map
     {
         public const String ATTRIBUTE_MOVE_TO_LOCATION = "location";
 
-        public MoveToAction(String location)
+        public MoveToAction(String location) : base("moveTo")
         {
-            super("moveTo");
             setAttribute(ATTRIBUTE_MOVE_TO_LOCATION, location);
         }
 

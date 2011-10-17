@@ -1,36 +1,41 @@
-namespace aima.test.core.unit.search.framework;
+namespace aima.test.core.unit.search.framework
+{
 
-using java.util.List;
 
-using org.junit.Assert;
-using org.junit.Test;
+    using AIMA.Core.Search.Framework;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using AIMA.Core.Search.Framework;
+    using System.Collections.Generic;
 
-using AIMA.Core.Search.Framework.Node;
+    /**
+     * @author Ravi Mohan
+     * 
+     */
+    [TestClass]
+    public class NodeTest
+    {
 
-/**
- * @author Ravi Mohan
- * 
- */
-public class NodeTest {
+        [TestMethod]
+        public void testRootNode()
+        {
+            Node node1 = new Node("state1");
+            Assert.IsTrue(node1.isRootNode());
+            Node node2 = new Node("state2", node1, null, 1.0);
+            Assert.IsTrue(node1.isRootNode());
+            Assert.IsFalse(node2.isRootNode());
+            Assert.AreEqual(node1, node2.getParent());
+        }
 
-	@Test
-	public void testRootNode() {
-		Node node1 = new Node("state1");
-		Assert.assertTrue(node1.isRootNode());
-		Node node2 = new Node("state2", node1, null, 1.0);
-		Assert.assertTrue(node1.isRootNode());
-		Assert.assertFalse(node2.isRootNode());
-		Assert.assertEquals(node1, node2.getParent());
-	}
-
-	@Test
-	public void testGetPathFromRoot() {
-		Node node1 = new Node("state1");
-		Node node2 = new Node("state2", node1, null, 1.0);
-		Node node3 = new Node("state3", node2, null, 1.0);
-		List<Node> path = node3.getPathFromRoot();
-		Assert.assertEquals(node1, path.get(0));
-		Assert.assertEquals(node2, path.get(1));
-		Assert.assertEquals(node3, path.get(2));
-	}
+        [TestMethod]
+        public void testGetPathFromRoot()
+        {
+            Node node1 = new Node("state1");
+            Node node2 = new Node("state2", node1, null, 1.0);
+            Node node3 = new Node("state3", node2, null, 1.0);
+            List<Node> path = node3.getPathFromRoot();
+            Assert.Equals(node1, path[0]);
+            Assert.Equals(node2, path[1]);
+            Assert.Equals(node3, path[2]);
+        }
+    }
 }

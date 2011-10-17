@@ -1,6 +1,5 @@
 namespace AIMA.Core.Search.Framework
 {
-    using System;
     using System.Collections.Generic;
     using AIMA.Core.Agent;
 

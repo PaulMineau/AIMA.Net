@@ -50,30 +50,30 @@ namespace AIMA.Core.Environment.Map
         {
             // mapOfRomania
             map.clear();
-            map.AddBidirectionalLink(ORADEA, ZERIND, 71.0);
-            map.AddBidirectionalLink(ORADEA, SIBIU, 151.0);
-            map.AddBidirectionalLink(ZERIND, ARAD, 75.0);
-            map.AddBidirectionalLink(ARAD, TIMISOARA, 118.0);
-            map.AddBidirectionalLink(ARAD, SIBIU, 140.0);
-            map.AddBidirectionalLink(TIMISOARA, LUGOJ, 111.0);
-            map.AddBidirectionalLink(LUGOJ, MEHADIA, 70.0);
-            map.AddBidirectionalLink(MEHADIA, DOBRETA, 75.0);
-            map.AddBidirectionalLink(DOBRETA, CRAIOVA, 120.0);
-            map.AddBidirectionalLink(SIBIU, FAGARAS, 99.0);
-            map.AddBidirectionalLink(SIBIU, RIMNICU_VILCEA, 80.0);
-            map.AddBidirectionalLink(RIMNICU_VILCEA, PITESTI, 97.0);
-            map.AddBidirectionalLink(RIMNICU_VILCEA, CRAIOVA, 146.0);
-            map.AddBidirectionalLink(CRAIOVA, PITESTI, 138.0);
-            map.AddBidirectionalLink(FAGARAS, BUCHAREST, 211.0);
-            map.AddBidirectionalLink(PITESTI, BUCHAREST, 101.0);
-            map.AddBidirectionalLink(GIURGIU, BUCHAREST, 90.0);
-            map.AddBidirectionalLink(BUCHAREST, URZICENI, 85.0);
-            map.AddBidirectionalLink(NEAMT, IASI, 87.0);
-            map.AddBidirectionalLink(URZICENI, VASLUI, 142.0);
-            map.AddBidirectionalLink(URZICENI, HIRSOVA, 98.0);
-            map.AddBidirectionalLink(IASI, VASLUI, 92.0);
+            map.addBidirectionalLink(ORADEA, ZERIND, 71.0);
+            map.addBidirectionalLink(ORADEA, SIBIU, 151.0);
+            map.addBidirectionalLink(ZERIND, ARAD, 75.0);
+            map.addBidirectionalLink(ARAD, TIMISOARA, 118.0);
+            map.addBidirectionalLink(ARAD, SIBIU, 140.0);
+            map.addBidirectionalLink(TIMISOARA, LUGOJ, 111.0);
+            map.addBidirectionalLink(LUGOJ, MEHADIA, 70.0);
+            map.addBidirectionalLink(MEHADIA, DOBRETA, 75.0);
+            map.addBidirectionalLink(DOBRETA, CRAIOVA, 120.0);
+            map.addBidirectionalLink(SIBIU, FAGARAS, 99.0);
+            map.addBidirectionalLink(SIBIU, RIMNICU_VILCEA, 80.0);
+            map.addBidirectionalLink(RIMNICU_VILCEA, PITESTI, 97.0);
+            map.addBidirectionalLink(RIMNICU_VILCEA, CRAIOVA, 146.0);
+            map.addBidirectionalLink(CRAIOVA, PITESTI, 138.0);
+            map.addBidirectionalLink(FAGARAS, BUCHAREST, 211.0);
+            map.addBidirectionalLink(PITESTI, BUCHAREST, 101.0);
+            map.addBidirectionalLink(GIURGIU, BUCHAREST, 90.0);
+            map.addBidirectionalLink(BUCHAREST, URZICENI, 85.0);
+            map.addBidirectionalLink(NEAMT, IASI, 87.0);
+            map.addBidirectionalLink(URZICENI, VASLUI, 142.0);
+            map.addBidirectionalLink(URZICENI, HIRSOVA, 98.0);
+            map.addBidirectionalLink(IASI, VASLUI, 92.0);
             // addBidirectionalLink(VASLUI - already all linked
-            map.AddBidirectionalLink(HIRSOVA, EFORIE, 86.0);
+            map.addBidirectionalLink(HIRSOVA, EFORIE, 86.0);
             // addBidirectionalLink(EFORIE - already all linked
 
             // distances and directions

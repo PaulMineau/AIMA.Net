@@ -1,6 +1,5 @@
 namespace AIMA.Core.Search.Framework
 {
-    using System;
     using System.Collections.Generic;
     using AIMA.Core.Agent;
     using AIMA.Core.Util.DataStructure;
@@ -29,18 +28,18 @@ namespace AIMA.Core.Search.Framework
     public class GraphSearch : QueueSearch
     {
 
-        private HashSet<Object> explored = new HashSet<Object>();
-        private Map<Object, Node> frontierState = new HashMap<Object, Node>();
-        private Comparator<Node> replaceFrontierNodeAtStateCostFunction = null;
+        private HashSet<System.Object> explored = new HashSet<System.Object>();
+        private Map<System.Object, Node> frontierState = new Map<System.Object, Node>();
+        private IComparer<Node> replaceFrontierNodeAtStateCostFunction = null;
         private List<Node> addToFrontier = new List<Node>();
 
-        public Comparator<Node> getReplaceFrontierNodeAtStateCostFunction()
+        public IComparer<Node> getReplaceFrontierNodeAtStateCostFunction()
         {
             return replaceFrontierNodeAtStateCostFunction;
         }
 
         public void setReplaceFrontierNodeAtStateCostFunction(
-                Comparator<Node> replaceFrontierNodeAtStateCostFunction)
+                IComparer<Node> replaceFrontierNodeAtStateCostFunction)
         {
             this.replaceFrontierNodeAtStateCostFunction = replaceFrontierNodeAtStateCostFunction;
         }
@@ -50,24 +49,24 @@ namespace AIMA.Core.Search.Framework
         public override List<Action> search(Problem problem, Queue<Node> frontier)
         {
             // initialize the explored set to be empty
-            explored.clear();
-            frontierState.clear();
-            return super.search(problem, frontier);
+            explored.Clear();
+            frontierState.Clear();
+            return base.search(problem, frontier);
         }
 
         public override Node popNodeFromFrontier()
         {
-            Node toRemove = super.popNodeFromFrontier();
-            frontierState.remove(toRemove.getState());
+            Node toRemove = base.popNodeFromFrontier();
+            frontierState.Remove(toRemove.getState());
             return toRemove;
         }
 
         public override bool removeNodeFromFrontier(Node toRemove)
         {
-            bool removed = super.removeNodeFromFrontier(toRemove);
+            bool removed = base.removeNodeFromFrontier(toRemove);
             if (removed)
             {
-                frontierState.remove(toRemove.getState());
+                frontierState.Remove(toRemove.getState());
             }
             return removed;
         }
@@ -76,22 +75,22 @@ namespace AIMA.Core.Search.Framework
                 Problem problem)
         {
 
-            addToFrontier.clear();
+            addToFrontier.Clear();
             // add the node to the explored set
             explored.Add(nodeToExpand.getState());
             // expand the chosen node, adding the resulting nodes to the frontier
             foreach (Node cfn in expandNode(nodeToExpand, problem))
             {
-                Node frontierNode = frontierState.get(cfn.getState());
+                Node frontierNode = frontierState[cfn.getState()];
                 bool yesAddToFrontier = false;
                 // only if not in the frontier or explored set
-                if (null == frontierNode && !explored.contains(cfn.getState()))
+                if (null == frontierNode && !explored.Contains(cfn.getState()))
                 {
                     yesAddToFrontier = true;
                 }
                 else if (null != frontierNode
                       && null != replaceFrontierNodeAtStateCostFunction
-                      && replaceFrontierNodeAtStateCostFunction.compare(cfn,
+                      && replaceFrontierNodeAtStateCostFunction.Compare(cfn,
                               frontierNode) < 0)
                 {
                     // child.STATE is in frontier with higher cost
@@ -103,13 +102,13 @@ namespace AIMA.Core.Search.Framework
                     removeNodeFromFrontier(frontierNode);
                     // Ensure removed from add to frontier as well
                     // as 1 or more may reach the same state at the same time
-                    addToFrontier.remove(frontierNode);
+                    addToFrontier.Remove(frontierNode);
                 }
 
                 if (yesAddToFrontier)
                 {
                     addToFrontier.Add(cfn);
-                    frontierState.put(cfn.getState(), cfn);
+                    frontierState.Add(cfn.getState(), cfn);
                 }
             }
 

@@ -1,72 +1,71 @@
-namespace aima.test.core.unit.search.framework;
+namespace aima.test.core.unit.search.framework
+{
 
-using java.util.HashSet;
-using java.util.List;
-using java.util.Set;
+    using AIMA.Core.Agent;
+    using AIMA.Core.Environment;
+    using AIMA.Core.Search.Framework;
+    using AIMA.Core.Search.Uninformed;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using System.Collections.Generic;
+    using AIMA;
+    using AIMA.Core.Environment.Map;
 
-using org.junit.Assert;
-using org.junit.Test;
+    [TestClass]
+    public class SolutionCheckerTest
+    {
 
-using AIMA.Core.Agent.Action;
-using AIMA.Core.Environment.Map.Map;
-using AIMA.Core.Environment.Map.MapFunctionFactory;
-using AIMA.Core.Environment.Map.MapStepCostFunction;
-using AIMA.Core.Environment.Map.SimplifiedRoadMapOfPartOfRomania;
-using AIMA.Core.Search.Framework.GraphSearch;
-using AIMA.Core.Search.Framework.Problem;
-using AIMA.Core.Search.Framework.Search;
-using AIMA.Core.Search.Framework.SearchAgent;
-using AIMA.Core.Search.Framework.SolutionChecker;
-using AIMA.Core.Search.Uninformed.BreadthFirstSearch;
+        [TestMethod]
+        public void testMultiGoalProblem()
+        {
+            Map romaniaMap = new SimplifiedRoadMapOfPartOfRomania();
+            Problem problem = new Problem(SimplifiedRoadMapOfPartOfRomania.ARAD,
+                    MapFunctionFactory.getActionsFunction(romaniaMap),
+                    MapFunctionFactory.getResultFunction(), new DualMapGoalTest(
+                            SimplifiedRoadMapOfPartOfRomania.BUCHAREST,
+                            SimplifiedRoadMapOfPartOfRomania.HIRSOVA),
+                    new MapStepCostFunction(romaniaMap));
 
-public class SolutionCheckerTest {
+            Search search = new BreadthFirstSearch(new GraphSearch());
 
-	@Test
-	public void testMultiGoalProblem() throws Exception {
-		Map romaniaMap = new SimplifiedRoadMapOfPartOfRomania();
-		Problem problem = new Problem(SimplifiedRoadMapOfPartOfRomania.ARAD,
-				MapFunctionFactory.getActionsFunction(romaniaMap),
-				MapFunctionFactory.getResultFunction(), new DualMapGoalTest(
-						SimplifiedRoadMapOfPartOfRomania.BUCHAREST,
-						SimplifiedRoadMapOfPartOfRomania.HIRSOVA),
-				new MapStepCostFunction(romaniaMap));
+            SearchAgent agent = new SearchAgent(problem, search);
+            Assert
+                    .Equals(
+                            "[Action[name==moveTo, location==Sibiu], Action[name==moveTo, location==Fagaras], Action[name==moveTo, location==Bucharest], Action[name==moveTo, location==Urziceni], Action[name==moveTo, location==Hirsova]]",
+                            agent.getActions().ToString());
+            Assert.Equals(5, agent.getActions().Count);
+            Assert.Equals("14", agent.getInstrumentation()[
+                    "nodesExpanded"]);
+            Assert.Equals("1", agent.getInstrumentation()[
+                    "queueSize"]);
+            Assert.Equals("5", agent.getInstrumentation()[
+                    "maxQueueSize"]);
+        }
 
-		Search search = new BreadthFirstSearch(new GraphSearch());
+        class DualMapGoalTest : SolutionChecker
+        {
+            public System.String goalState1 = null;
+            public System.String goalState2 = null;
 
-		SearchAgent agent = new SearchAgent(problem, search);
-		Assert
-				.assertEquals(
-						"[Action[name==moveTo, location==Sibiu], Action[name==moveTo, location==Fagaras], Action[name==moveTo, location==Bucharest], Action[name==moveTo, location==Urziceni], Action[name==moveTo, location==Hirsova]]",
-						agent.getActions().ToString());
-		Assert.assertEquals(5, agent.getActions().size());
-		Assert.assertEquals("14", agent.getInstrumentation().getProperty(
-				"nodesExpanded"));
-		Assert.assertEquals("1", agent.getInstrumentation().getProperty(
-				"queueSize"));
-		Assert.assertEquals("5", agent.getInstrumentation().getProperty(
-				"maxQueueSize"));
-	}
+            private Set<System.String> goals = new Set<System.String>();
 
-	class DualMapGoalTest : SolutionChecker {
-		public String goalState1 = null;
-		public String goalState2 = null;
+            public DualMapGoalTest(System.String goalState1, System.String goalState2)
+            {
+                this.goalState1 = goalState1;
+                this.goalState2 = goalState2;
+                goals.Add(goalState1);
+                goals.Add(goalState2);
+            }
 
-		private Set<String> goals = new HashSet<String>();
+            public bool isGoalState(System.Object state)
+            {
+                return goalState1.Equals(state) || goalState2.Equals(state);
+            }
 
-		public DualMapGoalTest(String goalState1, String goalState2) {
-			this.goalState1 = goalState1;
-			this.goalState2 = goalState2;
-			goals.add(goalState1);
-			goals.add(goalState2);
-		}
-
-		public bool isGoalState(Object state) {
-			return goalState1.equals(state) || goalState2.equals(state);
-		}
-
-		public bool isAcceptableSolution(List<Action> actions, Object goal) {
-			goals.remove(goal);
-			return goals.isEmpty();
-		}
-	}
+            public bool isAcceptableSolution(List<Action> actions, System.Object goal)
+            {
+                goals.Remove(goal.ToString());
+                return goals.Count==0;
+            }
+        }
+    }
 }

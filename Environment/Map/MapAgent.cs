@@ -1,9 +1,9 @@
 namespace AIMA.Core.Environment.Map
 {
-    using System;
     using System.Collections.Generic;
-using AIMA.Core.Agent;
-using AIMA.Core.Search.Framework;
+    using AIMA.Core.Agent;
+    using AIMA.Core.Search.Framework;
+    using AIMA.Core.Agent.Impl;
 
 /**
  * @author Ciaran O'Reilly
@@ -16,34 +16,34 @@ public class MapAgent : SimpleProblemSolvingAgent {
 
 	private DynamicState state = new DynamicState();
 
-	private Search search = null;
+	private Search _search = null;
 
-	private String[] goalTests = null;
+	private System.String[] goalTests = null;
 
 	private int goalTestPos = 0;
 
 	public MapAgent(Map map, EnvironmentViewNotifier notifier, Search search) {
 		this.map = map;
 		this.notifier = notifier;
-		this.search = search;
+        this._search = search;
 	}
 
 	public MapAgent(Map map, EnvironmentViewNotifier notifier, Search search,
-			int maxGoalsToFormulate) {
-		super(maxGoalsToFormulate);
+			int maxGoalsToFormulate) : base ( maxGoalsToFormulate) {
+		
 		this.map = map;
 		this.notifier = notifier;
-		this.search = search;
+        this._search = search;
 	}
 
 	public MapAgent(Map map, EnvironmentViewNotifier notifier, Search search,
-			String[] goalTests) {
-		super(goalTests.length);
+			System.String[] goalTests) : base (goalTests.Length){
+		
 		this.map = map;
 		this.notifier = notifier;
-		this.search = search;
-		this.goalTests = new String[goalTests.length];
-		System.arraycopy(goalTests, 0, this.goalTests, 0, goalTests.length);
+        this._search = search;
+        this.goalTests = new System.String[goalTests.Length];
+        System.Array.Copy(goalTests, 0, this.goalTests, 0, goalTests.Length);
 	}
 
 	//
@@ -58,8 +58,9 @@ public class MapAgent : SimpleProblemSolvingAgent {
 		return state;
 	}
 
-	protected override Object formulateGoal() {
-		Object goal = null;
+    protected override System.Object formulateGoal()
+    {
+        System.Object goal = null;
 		if (null == goalTests) {
 			goal = map.randomlyGenerateDestination();
 		} else {
@@ -73,29 +74,33 @@ public class MapAgent : SimpleProblemSolvingAgent {
 		return goal;
 	}
 
-	protected override Problem formulateProblem(Object goal) {
-		return new BidirectionalMapProblem(map, (String) state
-				.getAttribute(DynAttributeNames.AGENT_LOCATION), (String) goal);
+    protected override Problem formulateProblem(System.Object goal)
+    {
+        return new BidirectionalMapProblem(map, (System.String)state
+                .getAttribute(DynAttributeNames.AGENT_LOCATION), (System.String)goal);
 	}
 
 	protected override List<Action> search(Problem problem) {
 		List<Action> actions = new List<Action>();
 		try {
-			List<Action> sactions = search.search(problem);
+            List<Action> sactions = _search.search(problem);
 			foreach (Action action in sactions) {
 				actions.Add(action);
 			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
+        }
+        catch (System.Exception ex)
+        {
+            System.Diagnostics.Debug.WriteLine(ex.ToString());
 		}
 		return actions;
 	}
 
 	protected override void notifyViewOfMetrics() {
-		Set<String> keys = search.getMetrics().keySet();
-		foreach (String key in keys) {
+        HashSet<System.String> keys = _search.getMetrics().keySet();
+        foreach (System.String key in keys)
+        {
 			notifier.notifyViews("METRIC[" + key + "]="
-					+ search.getMetrics().get(key));
+                    + _search.getMetrics().get(key));
 		}
 	}
 }

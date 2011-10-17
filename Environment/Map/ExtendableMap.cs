@@ -35,7 +35,7 @@ public class ExtendableMap : Map {
 	/** Removes everything. */
 	public void clear() {
 		links.clear();
-		locationPositions.clear();
+		locationPositions.Clear();
 	}
 
 	/** Clears all connections but keeps location position informations. */
@@ -59,7 +59,7 @@ public class ExtendableMap : Map {
 	 */
 	public List<String> getLocationsLinkedTo(String fromLocation) {
 		List<String> result = links.getSuccessors(fromLocation);
-		Collections.sort(result);
+	    result.Sort();
 		return result;
 	}
 
@@ -110,7 +110,7 @@ public class ExtendableMap : Map {
 	 * coordinate system.
 	 */
 	public void setPosition(String loc, double x, double y) {
-		locationPositions.put(loc, new Point2D(x, y));
+		locationPositions.Add(loc, new Point2D(x, y));
 	}
 
 	/**
@@ -128,10 +128,10 @@ public class ExtendableMap : Map {
 	 *            the reference position
 	 */
 	public void setDistAndDirToRefLocation(String loc, double dist, int dir) {
-		Point2D coords = new Point2D(-Math.sin(dir * Math.PI / 180.0) * dist,
-				Math.cos(dir * Math.PI / 180.0) * dist);
-		links.AddVertex(loc);
-		locationPositions.put(loc, coords);
+		Point2D coords = new Point2D(-Math.Sin(dir * Math.PI / 180.0) * dist,
+				Math.Cos(dir * Math.PI / 180.0) * dist);
+		links.addVertex(loc);
+		locationPositions.Add(loc, coords);
 	}
 
 	/**
@@ -139,7 +139,7 @@ public class ExtendableMap : Map {
 	 * orthogonal coordinate system.
 	 */
 	public Point2D getPosition(String loc) {
-		return locationPositions.get(loc);
+		return locationPositions[loc];
 	}
 }
 }

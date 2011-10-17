@@ -2,7 +2,7 @@ namespace AIMA.Core.Environment.Map
 {
     using System;
     using System.Collections.Generic;
-    using AIMA.Core.Search.Framework.HeuristicFunction;
+    using AIMA.Core.Search.Framework;
 
     /**
      * This class : heuristic functions in two ways: It maintains a goal and a
@@ -11,8 +11,7 @@ namespace AIMA.Core.Environment.Map
      * 
      * @author Ruediger Lunde
      */
-    public abstract class AdaptableHeuristicFunction : HeuristicFunction,
-            Cloneable
+    public abstract class AdaptableHeuristicFunction : HeuristicFunction
     {
         /** The Current Goal. */
         protected Object goal;
@@ -31,6 +30,6 @@ namespace AIMA.Core.Environment.Map
         }
 
         // when subclassing: Don't forget to implement the most usingant method
-        // public double h(Object state)
+        public abstract double h(Object state);
     }
 }

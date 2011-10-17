@@ -22,7 +22,7 @@ public abstract class AbstractAgent : IAgent {
 
 	//
 	// START-Agent
-	public Action execute(Percept p) {
+	public virtual Action execute(Percept p) {
 		if (null != program) {
 			return program.execute(p);
 		}

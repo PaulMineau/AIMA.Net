@@ -1,6 +1,5 @@
 namespace AIMA.Core.Environment.Map
 {
-    using System;
     using System.Collections.Generic;
     using AIMA.Core.Agent;
     using AIMA.Core.Agent.Impl;
@@ -29,7 +28,7 @@ namespace AIMA.Core.Environment.Map
             return _resultFunction;
         }
 
-        private static class MapActionsFunction : ActionsFunction
+        private class MapActionsFunction : ActionsFunction
         {
             private Map map = null;
 
@@ -38,13 +37,13 @@ namespace AIMA.Core.Environment.Map
                 map = aMap;
             }
 
-            public HashSet<Action> actions(Object state)
+            public HashSet<Action> actions(System.Object state)
             {
                 HashSet<Action> actions = new LinkedHashSet<Action>();
-                String location = state.ToString();
+                System.String location = state.ToString();
 
-                List<String> linkedLocations = map.getLocationsLinkedTo(location);
-                foreach (String linkLoc in linkedLocations)
+                List<System.String> linkedLocations = map.getLocationsLinkedTo(location);
+                foreach (System.String linkLoc in linkedLocations)
                 {
                     actions.Add(new MoveToAction(linkLoc));
                 }
@@ -62,13 +61,13 @@ namespace AIMA.Core.Environment.Map
             return _perceptToStateFunction;
         }
 
-        private static class MapResultFunction : ResultFunction
+        private class MapResultFunction : ResultFunction
         {
             public MapResultFunction()
             {
             }
 
-            public Object result(Object s, Action a)
+            public System.Object result(System.Object s, Action a)
             {
 
                 if (a is MoveToAction)
@@ -84,10 +83,10 @@ namespace AIMA.Core.Environment.Map
             }
         }
 
-        private static class MapPerceptToStateFunction :
+        private class MapPerceptToStateFunction :
                 PerceptToStateFunction
         {
-            public Object getState(Percept p)
+            public System.Object getState(Percept p)
             {
                 return ((DynamicPercept)p)
                         .getAttribute(DynAttributeNames.PERCEPT_IN);

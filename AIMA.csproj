@@ -166,20 +166,45 @@
     <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Environment\Map\AdaptableHeuristicFunction.cs" />
+    <Compile Include="Environment\Map\BidirectionalMapProblem.cs" />
+    <Compile Include="Environment\Map\DynAttributeNames.cs" />
+    <Compile Include="Environment\Map\ExtendableMap.cs" />
+    <Compile Include="Environment\Map\Map.cs" />
+    <Compile Include="Environment\Map\MapAgent.cs" />
+    <Compile Include="Environment\Map\MapEnvironment.cs" />
+    <Compile Include="Environment\Map\MapEnvironmentState.cs" />
+    <Compile Include="Environment\Map\MapFunctionFactory.cs" />
+    <Compile Include="Environment\Map\MapStepCostFunction.cs" />
+    <Compile Include="Environment\Map\MoveToAction.cs" />
+    <Compile Include="Environment\Map\package-info.cs" />
+    <Compile Include="Environment\Map\Scenario.cs" />
+    <Compile Include="Environment\Map\SimplifiedRoadMapOfAustralia.cs" />
+    <Compile Include="Environment\Map\SimplifiedRoadMapOfPartOfRomania.cs" />
+    <Compile Include="Environment\Map\StraightLineDistanceHeuristicFunction.cs" />
     <Compile Include="JavaClasses.cs" />
     <Compile Include="Search\Framework\ActionsFunction.cs" />
+    <Compile Include="Search\Framework\BidirectionalProblem.cs" />
+    <Compile Include="Search\Framework\DefaultGoalTest.cs" />
     <Compile Include="Search\Framework\DefaultStepCostFunction.cs" />
     <Compile Include="Search\Framework\GoalTest.cs" />
+    <Compile Include="Search\Framework\GraphSearch.cs" />
+    <Compile Include="Search\Framework\HeuristicFunction.cs" />
     <Compile Include="Search\Framework\Metrics.cs" />
     <Compile Include="Search\Framework\Node.cs" />
     <Compile Include="Search\Framework\NodeExpander.cs" />
+    <Compile Include="Search\Framework\PerceptToStateFunction.cs" />
     <Compile Include="Search\Framework\Problem.cs" />
     <Compile Include="Search\Framework\QueueSearch.cs" />
     <Compile Include="Search\Framework\ResultFunction.cs" />
+    <Compile Include="Search\Framework\Search.cs" />
+    <Compile Include="Search\Framework\SearchAgent.cs" />
     <Compile Include="Search\Framework\SearchUtils.cs" />
+    <Compile Include="Search\Framework\SimpleProblemSolvingAgent.cs" />
     <Compile Include="Search\Framework\SolutionChecker.cs" />
     <Compile Include="Search\Framework\StepCostFunction.cs" />
     <Compile Include="Search\Framework\TreeSearch.cs" />
+    <Compile Include="Search\Uninformed\BreadthFirstSearch.cs" />
     <Compile Include="Test\Core\Unit\Agent\Impl\AProg\SimpleRule\RuleTest.cs" />
     <Compile Include="Test\Core\Unit\Agent\Impl\AProg\TableDrivenAgentProgramTest.cs" />
     <Compile Include="Test\Core\Unit\Agent\Impl\DynamicPerceptTest.cs" />
@@ -219,6 +244,8 @@
     <Compile Include="Test\Core\Unit\Logic\Propositional\Visitors\SymbolCollectorTest.cs" />
     <Compile Include="Test\Core\Unit\Search\Framework\NodeTest.cs" />
     <Compile Include="Test\Core\Unit\Search\Framework\SolutionCheckerTest.cs" />
+    <Compile Include="Util\DataStructure\LabeledGraph.cs" />
+    <Compile Include="Util\DataStructure\Point2D.cs" />
     <Compile Include="Util\VerbosityLevel.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,6 +1,5 @@
 namespace AIMA.Core.Search.Framework
 {
-    using System;
     using System.Collections.Generic;
     using AIMA.Core.Agent;
     using AIMA.Core.Agent.Impl;
@@ -13,22 +12,23 @@ namespace AIMA.Core.Search.Framework
     {
         protected List<Action> actionList;
 
-        private Iterator<Action> actionIterator;
+        private List<Action>.Enumerator actionIterator;
 
         private Metrics searchMetrics;
 
         public SearchAgent(Problem p, Search search)
         {
             actionList = search.search(p);
-            actionIterator = actionList.iterator();
+            actionIterator = actionList.GetEnumerator();
             searchMetrics = search.getMetrics();
         }
 
         public override Action execute(Percept p)
         {
-            if (actionIterator.hasNext())
+            
+            if (actionIterator.MoveNext())
             {
-                return actionIterator.next();
+                return actionIterator.Current;
             }
             else
             {
@@ -38,7 +38,7 @@ namespace AIMA.Core.Search.Framework
 
         public bool isDone()
         {
-            return !actionIterator.hasNext();
+            return null != actionIterator.Current;
         }
 
         public List<Action> getActions()
@@ -46,15 +46,13 @@ namespace AIMA.Core.Search.Framework
             return actionList;
         }
 
-        public Properties getInstrumentation()
+        public Dictionary<string,string> getInstrumentation()
         {
-            Properties retVal = new Properties();
-            Iterator<String> iter = searchMetrics.keySet().iterator();
-            while (iter.hasNext())
-            {
-                String key = iter.next();
-                String value = searchMetrics.get(key);
-                retVal.setProperty(key, value);
+            Dictionary<string, string> retVal = new Dictionary<string, string>();
+           foreach(string key in  searchMetrics.keySet())
+           {
+                System.String value = searchMetrics.get(key);
+                retVal.Add(key, value);
             }
             return retVal;
         }

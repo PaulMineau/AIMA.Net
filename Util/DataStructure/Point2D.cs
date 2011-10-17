@@ -36,7 +36,7 @@ namespace AIMA.Core.Util.DataStructure
         {
             double result = (pt.getX() - x) * (pt.getX() - x);
             result += (pt.getY() - y) * (pt.getY() - y);
-            return Math.sqrt(result);
+            return Math.Sqrt(result);
         }
     }
 }

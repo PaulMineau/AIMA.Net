@@ -17,7 +17,7 @@ namespace AIMA.Core.Environment.Map
             this.map = map;
         }
 
-        public double h(Object state)
+        public override double h(Object state)
         {
             double result = 0.0;
             Point2D pt1 = map.getPosition((String)state);

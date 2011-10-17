@@ -44,7 +44,7 @@ namespace AIMA.Core.Util.DataStructure
         public void set(VertexLabelType from, VertexLabelType to, EdgeLabelType el)
         {
             Dictionary<VertexLabelType, EdgeLabelType> localEdgeLookup = checkForNewVertex(from);
-            localEdgeLookup.put(to, el);
+            localEdgeLookup.Add(to, el);
             checkForNewVertex(to);
         }
 
@@ -53,11 +53,11 @@ namespace AIMA.Core.Util.DataStructure
                 VertexLabelType v)
         {
             Dictionary<VertexLabelType, EdgeLabelType> result = globalEdgeLookup
-                    .get(v);
+                    [v];
             if (result == null)
             {
                 result = new Dictionary<VertexLabelType, EdgeLabelType>();
-                globalEdgeLookup.put(v, result);
+                globalEdgeLookup.Add(v, result);
                 vertexLabels.Add(v);
             }
             return result;
@@ -67,9 +67,9 @@ namespace AIMA.Core.Util.DataStructure
         public void remove(VertexLabelType from, VertexLabelType to)
         {
             Dictionary<VertexLabelType, EdgeLabelType> localEdgeLookup = globalEdgeLookup
-                    .get(from);
+                    [from];
             if (localEdgeLookup != null)
-                localEdgeLookup.remove(to);
+                localEdgeLookup.Remove(to);
         }
 
         /**
@@ -79,8 +79,8 @@ namespace AIMA.Core.Util.DataStructure
         public EdgeLabelType get(VertexLabelType from, VertexLabelType to)
         {
             Dictionary<VertexLabelType, EdgeLabelType> localEdgeLookup = globalEdgeLookup
-                    .get(from);
-            return localEdgeLookup == null ? null : localEdgeLookup.get(to);
+                    [from];
+            return localEdgeLookup == null ? default(EdgeLabelType) : localEdgeLookup[to];
         }
 
         /**
@@ -91,9 +91,9 @@ namespace AIMA.Core.Util.DataStructure
         {
             List<VertexLabelType> result = new List<VertexLabelType>();
             Dictionary<VertexLabelType, EdgeLabelType> localEdgeLookup = globalEdgeLookup
-                    .get(v);
+                    [v];
             if (localEdgeLookup != null)
-                result.AddRange(localEdgeLookup.keySet());
+                result.AddRange(localEdgeLookup.Keys);
             return result;
         }
 
@@ -106,14 +106,14 @@ namespace AIMA.Core.Util.DataStructure
         /** Checks whether the given label is the label of one of the vertices. */
         public bool isVertexLabel(VertexLabelType v)
         {
-            return globalEdgeLookup.get(v) != null;
+            return globalEdgeLookup[v] != null;
         }
 
         /** Removes all vertices and all edges from the graph. */
         public void clear()
         {
-            vertexLabels.clear();
-            globalEdgeLookup.clear();
+            vertexLabels.Clear();
+            globalEdgeLookup.Clear();
         }
     }
 }

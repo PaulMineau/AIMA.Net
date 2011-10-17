@@ -17,11 +17,11 @@ namespace AIMA.Core.Environment.Map
         Problem reverseProblem;
 
         public BidirectionalMapProblem(Map aMap, String initialState,
-                String goalState)
-        {
-            super(initialState, MapFunctionFactory.getActionsFunction(aMap),
+                String goalState) : base(initialState, MapFunctionFactory.getActionsFunction(aMap),
                     MapFunctionFactory.getResultFunction(), new DefaultGoalTest(
-                            goalState), new MapStepCostFunction(aMap));
+                            goalState), new MapStepCostFunction(aMap))
+        {
+            ;
 
             map = aMap;
 

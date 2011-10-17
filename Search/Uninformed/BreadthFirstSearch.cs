@@ -1,6 +1,5 @@
 namespace AIMA.Core.Search.Uninformed
 {
-    using System;
     using System.Collections.Generic;
     using AIMA.Core.Agent;
     using AIMA.Core.Search.Framework;
@@ -38,11 +37,11 @@ namespace AIMA.Core.Search.Uninformed
     public class BreadthFirstSearch : Search
     {
 
-        private QueueSearch search;
+        private QueueSearch _search;
 
-        public BreadthFirstSearch()
+        public BreadthFirstSearch() : this(new GraphSearch())
         {
-            this(new GraphSearch());
+      
         }
 
         public BreadthFirstSearch(QueueSearch search)
@@ -50,17 +49,17 @@ namespace AIMA.Core.Search.Uninformed
             // Goal test is to be applied to each node when it is generated
             // rather than when it is selected for expansion.
             search.setCheckGoalBeforeAddingToFrontier(true);
-            this.search = search;
+            this._search = search;
         }
 
         public List<Action> search(Problem p)
         {
-            return search.search(p, new FIFOQueue<Node>());
+            return this._search.search(p, new FIFOQueue<Node>());
         }
 
         public Metrics getMetrics()
         {
-            return search.getMetrics();
+            return this._search.getMetrics();
         }
     }
 }

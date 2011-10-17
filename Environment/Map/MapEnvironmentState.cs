@@ -2,8 +2,9 @@ namespace AIMA.Core.Environment.Map
 {
     using System;
     using System.Collections.Generic;
-    using AIMA.Core.Agent;
+    using AIMA.Core;
     using AIMA.Core.Util.DataStructure;
+    using AIMA.Core.Agent;
 
     /**
      * @author Ciaran O'Reilly
@@ -11,17 +12,17 @@ namespace AIMA.Core.Environment.Map
      */
     public class MapEnvironmentState : EnvironmentState
     {
-        private Dictionary<Agent, Pair<String, Double>> agentLocationAndTravelDistance = new Dictionary<Agent, Pair<String, Double>>();
+        private Dictionary<IAgent, Pair<String, Double>> agentLocationAndTravelDistance = new Dictionary<IAgent, Pair<String, Double>>();
 
         public MapEnvironmentState()
         {
 
         }
 
-        public String getAgentLocation(Agent a)
+        public String getAgentLocation(IAgent a)
         {
             Pair<String, Double> locAndTDistance = agentLocationAndTravelDistance
-                    .get(a);
+                    [a];
             if (null == locAndTDistance)
             {
                 return null;
@@ -29,21 +30,21 @@ namespace AIMA.Core.Environment.Map
             return locAndTDistance.getFirst();
         }
 
-        public Double getAgentTravelDistance(Agent a)
+        public Double getAgentTravelDistance(IAgent a)
         {
             Pair<String, Double> locAndTDistance = agentLocationAndTravelDistance
-                    .get(a);
+                    [a];
             if (null == locAndTDistance)
             {
-                return null;
+                return Double.MinValue;
             }
             return locAndTDistance.getSecond();
         }
 
-        public void setAgentLocationAndTravelDistance(Agent a, String location,
+        public void setAgentLocationAndTravelDistance(IAgent a, String location,
                 Double travelDistance)
         {
-            agentLocationAndTravelDistance.put(a, new Pair<String, Double>(
+            agentLocationAndTravelDistance.Add(a, new Pair<String, Double>(
                     location, travelDistance));
         }
     }

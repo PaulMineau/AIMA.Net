@@ -23,7 +23,7 @@ namespace AIMA.Core.Search.Framework
         private Queue<Node> frontier = null;
         private bool checkGoalBeforeAddingToFrontier = false;
 
-        public bool isFailure(List<Action> result)
+        public virtual bool isFailure(List<Action> result)
         {
             return 0 == result.Count;
         }
@@ -37,7 +37,7 @@ namespace AIMA.Core.Search.Framework
          *         fail to find the Goal, an empty list will be returned to indicate
          *         that the search failed.
          */
-        public List<Action> search(Problem problem, Queue<Node> frontier)
+        public virtual List<Action> search(Problem problem, Queue<Node> frontier)
         {
             this.frontier = frontier;
 
@@ -93,23 +93,23 @@ namespace AIMA.Core.Search.Framework
             return failure();
         }
 
-        public bool isCheckGoalBeforeAddingToFrontier()
+        public virtual bool isCheckGoalBeforeAddingToFrontier()
         {
             return checkGoalBeforeAddingToFrontier;
         }
 
-        public void setCheckGoalBeforeAddingToFrontier(
+        public virtual void setCheckGoalBeforeAddingToFrontier(
                 bool checkGoalBeforeAddingToFrontier)
         {
             this.checkGoalBeforeAddingToFrontier = checkGoalBeforeAddingToFrontier;
         }
 
-        public Node popNodeFromFrontier()
+        public virtual Node popNodeFromFrontier()
         {
             return frontier.Dequeue();
         }
 
-        public bool removeNodeFromFrontier(Node toRemove)
+        public virtual bool removeNodeFromFrontier(Node toRemove)
         {
             return false; // TODO
         }
@@ -117,7 +117,7 @@ namespace AIMA.Core.Search.Framework
         public abstract List<Node> getResultingNodesToAddToFrontier(
                 Node nodeToExpand, Problem p);
 
-        public  void clearInstrumentation()
+        public virtual void clearInstrumentation()
         {
             base.clearInstrumentation();
             metrics.set(METRIC_QUEUE_SIZE, 0);

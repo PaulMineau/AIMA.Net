@@ -1,6 +1,5 @@
 namespace AIMA.Core.Search.Framework
 {
-    using System;
     using System.Collections.Generic;
     using AIMA.Core.Agent;
     using AIMA.Core.Agent.Impl;
@@ -77,7 +76,7 @@ namespace AIMA.Core.Search.Framework
                         notifyViewOfMetrics();
                     }
                     // goal <- FORMULATE-GOAL(state)
-                    Object goal = formulateGoal();
+                    System.Object goal = formulateGoal();
                     goalsFormulated++;
                     // problem <- FORMULATE-PROBLEM(state, goal)
                     Problem problem = formulateProblem(goal);
@@ -114,9 +113,9 @@ namespace AIMA.Core.Search.Framework
         //
         protected abstract State updateState(Percept p);
 
-        protected abstract Object formulateGoal();
+        protected abstract System.Object formulateGoal();
 
-        protected abstract Problem formulateProblem(Object goal);
+        protected abstract Problem formulateProblem(System.Object goal);
 
         protected abstract List<Action> search(Problem problem);
 

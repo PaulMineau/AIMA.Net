@@ -1,6 +1,5 @@
 namespace AIMA.Core.Environment.Map
 {
-    using System;
     using System.Collections.Generic;
 using AIMA.Core.Agent;
 using AIMA.Core.Agent.Impl;
@@ -22,19 +21,21 @@ public class MapEnvironment : AbstractEnvironment {
 		this.aMap = aMap;
 	}
 
-	public void addAgent(Agent a, String startLocation) {
+    public void addAgent(IAgent a, System.String startLocation)
+    {
 		// Ensure the agent state information is tracked before
 		// adding to super, as super will notify the registered
 		// EnvironmentViews that is was added.
 		state.setAgentLocationAndTravelDistance(a, startLocation, 0.0);
-		super.AddAgent(a);
+		base.addAgent(a);
 	}
 
-	public String getAgentLocation(Agent a) {
+	public System.String getAgentLocation(IAgent a) {
 		return state.getAgentLocation(a);
 	}
 
-	public Double getAgentTravelDistance(Agent a) {
+    public System.Double getAgentTravelDistance(IAgent a)
+    {
 		return state.getAgentTravelDistance(a);
 	}
 
@@ -42,13 +43,14 @@ public class MapEnvironment : AbstractEnvironment {
 		return state;
 	}
 
-	public override EnvironmentState executeAction(Agent agent, Action a) {
+    public override EnvironmentState executeAction(IAgent agent, Action a)
+    {
 
 		if (!a.isNoOp()) {
 			MoveToAction act = (MoveToAction) a;
 
-			String currLoc = getAgentLocation(agent);
-			Double distance = aMap.getDistance(currLoc, act.getToLocation());
+            System.String currLoc = getAgentLocation(agent);
+            System.Double distance = aMap.getDistance(currLoc, act.getToLocation());
 			if (distance != null) {
 				double currTD = getAgentTravelDistance(agent);
 				state.setAgentLocationAndTravelDistance(agent, act
@@ -59,7 +61,7 @@ public class MapEnvironment : AbstractEnvironment {
 		return state;
 	}
 
-	public override Percept getPerceptSeenBy(Agent anAgent) {
+	public override Percept getPerceptSeenBy(IAgent anAgent) {
 		return new DynamicPercept(DynAttributeNames.PERCEPT_IN,
 				getAgentLocation(anAgent));
 	}

@@ -1,6 +1,5 @@
 namespace AIMA.Core.Environment.Map
 {
-    using System;
     using System.Collections.Generic;
     using AIMA.Core.Agent;
     using AIMA.Core.Search.Framework;
@@ -31,20 +30,20 @@ namespace AIMA.Core.Environment.Map
 
         //
         // START-StepCostFunction
-        public double c(Object fromCurrentState, Action action, Object toNextState)
+        public double c(System.Object fromCurrentState, Action action, System.Object toNextState)
         {
 
-            String fromLoc = fromCurrentState.ToString();
-            String toLoc = toNextState.ToString();
+            System.String fromLoc = fromCurrentState.ToString();
+            System.String toLoc = toNextState.ToString();
 
-            Double distance = map.getDistance(fromLoc, toLoc);
+            System.Double distance = map.getDistance(fromLoc, toLoc);
 
             if (distance == null || distance <= 0)
             {
                 return constantCost;
             }
 
-            return new Double(distance);
+            return distance;
         }
 
         // END-StepCostFunction
