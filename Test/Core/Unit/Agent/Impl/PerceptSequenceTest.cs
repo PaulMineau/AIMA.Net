@@ -1,47 +1,48 @@
-namespace aima.test.core.unit.agent.impl;
+namespace aima.test.core.unit.agent.impl
+{
 
-using java.util.ArrayList;
-using java.util.List;
+using System.Collections;
 
-using org.junit.Assert;
-using org.junit.Test;
-
-using AIMA.Core.Agent.Percept;
-using AIMA.Core.Agent.Impl.DynamicPercept;
+using AIMA.Core.Agent;
+using AIMA.Core.Agent.Impl;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using System.Collections.Generic;
 
 /**
  * @author Ciaran O'Reilly
  * 
  */
+[TestClass]
 public class PerceptSequenceTest {
 
-	@Test
+    [TestMethod]
 	public void testToString() {
-		List<Percept> ps = new ArrayList<Percept>();
-		ps.add(new DynamicPercept("key1", "value1"));
+		List<Percept> ps = new List<Percept>();
+		ps.Add(new DynamicPercept("key1", "value1"));
 
-		Assert.assertEquals("[Percept[key1==value1]]", ps.ToString());
+		Assert.Equals("[Percept[key1==value1]]", ps.ToString());
 
-		ps.add(new DynamicPercept("key1", "value1", "key2", "value2"));
+		ps.Add(new DynamicPercept("key1", "value1", "key2", "value2"));
 
-		Assert.assertEquals(
+        Assert.Equals(
 				"[Percept[key1==value1], Percept[key1==value1, key2==value2]]",
 				ps.ToString());
 	}
 
-	@Test
+	[TestMethod]
 	public void testEquals() {
-		List<Percept> ps1 = new ArrayList<Percept>();
-		List<Percept> ps2 = new ArrayList<Percept>();
+		List<Percept> ps1 = new List<Percept>();
+		List<Percept> ps2 = new List<Percept>();
 
-		Assert.assertEquals(ps1, ps2);
+        Assert.Equals(ps1, ps2);
 
-		ps1.add(new DynamicPercept("key1", "value1"));
+		ps1.Add(new DynamicPercept("key1", "value1"));
 
-		Assert.assertNotSame(ps1, ps2);
+		Assert.AreNotEqual(ps1, ps2);
 
-		ps2.add(new DynamicPercept("key1", "value1"));
+		ps2.Add(new DynamicPercept("key1", "value1"));
 
-		Assert.assertEquals(ps1, ps2);
+		Assert.Equals(ps1, ps2);
 	}
+}
 }

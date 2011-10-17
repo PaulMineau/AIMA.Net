@@ -15,7 +15,7 @@ namespace AIMA.Core.Agent.Impl
         }
 
 
-        public override String describeType()
+        public String describeType()
         {
             return typeof(State).Name;
         }

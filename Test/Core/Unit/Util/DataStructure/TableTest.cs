@@ -32,7 +32,7 @@ public class TableTest {
 
 	[TestMethod]
 	public void testTableInitialization() {
-		Assert.IsFalse(table.get("ravi", "iq").HasValue);
+		Assert.IsFalse(table.get("ravi", "iq")<0);
 		table.set("ravi", "iq", 50);
 		int? i = table.get("ravi", "iq");
 		Assert.AreEqual(50, i.Value);
@@ -41,13 +41,13 @@ public class TableTest {
 	[TestMethod]
 	public void testNullAccess() {
 		// No value yet assigned
-        Assert.IsFalse(table.get("row1", "col2").HasValue);
+        Assert.IsFalse(table.get("row1", "col2")==Int32.MinValue);
 		table.set("row1", "col1", 1);
-		Assert.AreEqual(1, table.get("row1", "col1").Value);
+        Assert.AreEqual(1, table.get("row1", "col1") == Int32.MinValue);
 		// Check null returned if column does not exist
-        Assert.IsFalse(table.get("row1", "col2").HasValue);
+        Assert.IsFalse(table.get("row1", "col2") == Int32.MinValue);
 		// Check null returned if row does not exist
-        Assert.IsFalse(table.get("row2", "col1").HasValue);
+        Assert.IsFalse(table.get("row2", "col1") == Int32.MinValue);
 	}
 
 }

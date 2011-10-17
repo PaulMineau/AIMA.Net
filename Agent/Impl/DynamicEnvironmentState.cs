@@ -2,7 +2,7 @@ namespace AIMA.Core.Agent.Impl
 {
     using System;
     using System.Collections.Generic;
-using AIMA.Core.Agent.EnvironmentState;
+    using AIMA.Core.Agent;
 
 /**
  * @author Ravi Mohan
@@ -14,7 +14,7 @@ public class DynamicEnvironmentState : ObjectWithDynamicAttributes
 
 	}
 
-	public override String describeType() {
+	public String describeType() {
 		return typeof(EnvironmentState).Name;
 	}
 }

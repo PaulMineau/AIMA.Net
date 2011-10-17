@@ -1,6 +1,5 @@
 namespace AIMA.Core.Search.Framework
 {
-    using System;
     using System.Collections.Generic;
     using AIMA.Core.Agent;
 
@@ -12,7 +11,7 @@ namespace AIMA.Core.Search.Framework
     public class DefaultStepCostFunction : StepCostFunction
     {
 
-        public double c(Object stateFrom, Action action, Object stateTo)
+        public double c(object stateFrom, Action action, object stateTo)
         {
             return 1;
         }

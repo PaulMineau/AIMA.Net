@@ -12,7 +12,7 @@ namespace AIMA.Core.Agent
      * @author Ravi Mohan
      * @author Ciaran O'Reilly
      */
-    public interface Agent : EnvironmentObject
+    public interface IAgent : EnvironmentObject
     {
         /**
          * Call the Agent's program, which maps any given percept sequences to an

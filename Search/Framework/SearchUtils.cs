@@ -1,6 +1,5 @@
 namespace AIMA.Core.Search.Framework
 {
-    using System;
     using System.Collections.Generic;
     using AIMA.Core.Agent;
     using AIMA.Core.Agent.Impl;
@@ -27,7 +26,7 @@ namespace AIMA.Core.Search.Framework
                 // hence index starts from 1 not zero
                 for (int i = 1; i < nodeList.Count; i++)
                 {
-                    Node node = nodeList.get(i);
+                    Node node = nodeList[i];
                     actions.Add(node.getAction());
                 }
             }

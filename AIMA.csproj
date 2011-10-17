@@ -134,9 +134,57 @@
     <Compile Include="Activities\Probability\Reasoning\HMMFactoryDesigner.xaml.cs">
       <DependentUpon>HMMFactoryDesigner.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Agent\Action.cs" />
+    <Compile Include="Agent\Agent.cs" />
+    <Compile Include="Agent\AgentProgram.cs" />
+    <Compile Include="Agent\Environment.cs" />
+    <Compile Include="Agent\EnvironmentObject.cs" />
+    <Compile Include="Agent\EnvironmentState.cs" />
+    <Compile Include="Agent\EnvironmentView.cs" />
+    <Compile Include="Agent\EnvironmentViewNotifier.cs" />
+    <Compile Include="Agent\Impl\AbstractAgent.cs" />
+    <Compile Include="Agent\Impl\AbstractEnvironment.cs" />
+    <Compile Include="Agent\Impl\AProg\ModelBasedReflexAgentProgram.cs" />
+    <Compile Include="Agent\Impl\AProg\SimpleReflexAgentProgram.cs" />
+    <Compile Include="Agent\Impl\AProg\SimpleRule\ANDCondition.cs" />
+    <Compile Include="Agent\Impl\AProg\SimpleRule\Condition.cs" />
+    <Compile Include="Agent\Impl\AProg\SimpleRule\EQUALCondition.cs" />
+    <Compile Include="Agent\Impl\AProg\SimpleRule\NOTCondition.cs" />
+    <Compile Include="Agent\Impl\AProg\SimpleRule\ORCondition.cs" />
+    <Compile Include="Agent\Impl\AProg\SimpleRule\Rule.cs" />
+    <Compile Include="Agent\Impl\AProg\TableDrivenAgentProgram.cs" />
+    <Compile Include="Agent\Impl\DynamicAction.cs" />
+    <Compile Include="Agent\Impl\DynamicEnvironmentState.cs" />
+    <Compile Include="Agent\Impl\DynamicPercept.cs" />
+    <Compile Include="Agent\Impl\DynamicState.cs" />
+    <Compile Include="Agent\Impl\NoOpAction.cs" />
+    <Compile Include="Agent\Impl\ObjectWithDynamicAttributes.cs" />
+    <Compile Include="Agent\Impl\SimpleEnvironmentView.cs" />
+    <Compile Include="Agent\Model.cs" />
+    <Compile Include="Agent\Percept.cs" />
+    <Compile Include="Agent\State.cs" />
     <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="JavaClasses.cs" />
+    <Compile Include="Search\Framework\ActionsFunction.cs" />
+    <Compile Include="Search\Framework\DefaultStepCostFunction.cs" />
+    <Compile Include="Search\Framework\GoalTest.cs" />
+    <Compile Include="Search\Framework\Metrics.cs" />
+    <Compile Include="Search\Framework\Node.cs" />
+    <Compile Include="Search\Framework\NodeExpander.cs" />
+    <Compile Include="Search\Framework\Problem.cs" />
+    <Compile Include="Search\Framework\QueueSearch.cs" />
+    <Compile Include="Search\Framework\ResultFunction.cs" />
+    <Compile Include="Search\Framework\SearchUtils.cs" />
+    <Compile Include="Search\Framework\SolutionChecker.cs" />
+    <Compile Include="Search\Framework\StepCostFunction.cs" />
+    <Compile Include="Search\Framework\TreeSearch.cs" />
+    <Compile Include="Test\Core\Unit\Agent\Impl\AProg\SimpleRule\RuleTest.cs" />
+    <Compile Include="Test\Core\Unit\Agent\Impl\AProg\TableDrivenAgentProgramTest.cs" />
+    <Compile Include="Test\Core\Unit\Agent\Impl\DynamicPerceptTest.cs" />
+    <Compile Include="Test\Core\Unit\Agent\Impl\MockAgent.cs" />
+    <Compile Include="Test\Core\Unit\Agent\Impl\PerceptSequenceTest.cs" />
     <Compile Include="Test\Core\Unit\Logic\FOL\CNFConverterTest.cs" />
     <Compile Include="Test\Core\Unit\Logic\FOL\CommonFOLInferenceProcedureTests.cs" />
     <Compile Include="Test\Core\Unit\Logic\FOL\Inference\DemodulationTest.cs" />
@@ -169,6 +217,8 @@
     <Compile Include="Test\Core\Unit\Logic\Propositional\Visitors\CNFTransformerTest.cs" />
     <Compile Include="Test\Core\Unit\Logic\Propositional\Visitors\SymbolClassifierTest.cs" />
     <Compile Include="Test\Core\Unit\Logic\Propositional\Visitors\SymbolCollectorTest.cs" />
+    <Compile Include="Test\Core\Unit\Search\Framework\NodeTest.cs" />
+    <Compile Include="Test\Core\Unit\Search\Framework\SolutionCheckerTest.cs" />
     <Compile Include="Util\VerbosityLevel.cs" />
   </ItemGroup>
   <ItemGroup>

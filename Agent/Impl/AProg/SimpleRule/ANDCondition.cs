@@ -3,7 +3,8 @@ namespace AIMA.Core.Agent.Impl.AProg.SimpleRule
     using System;
     using System.Collections.Generic;
     using System.Text;
-using AIMA.Core.Agent.Impl;
+    using AIMA.Core.Agent.Impl;
+    using System.Diagnostics;
 
 /**
  * Implementation of an AND condition.
@@ -20,8 +21,8 @@ public class ANDCondition : Condition {
 	private Condition right;
 
 	public ANDCondition(Condition aLeftCon, Condition aRightCon) {
-		assert (null != aLeftCon);
-		assert (null != aRightCon);
+		Debug.Assert(null != aLeftCon);
+		Debug.Assert(null != aRightCon);
 
 		left = aLeftCon;
 		right = aRightCon;
@@ -34,7 +35,7 @@ public class ANDCondition : Condition {
 	public override String ToString() {
 		StringBuilder sb = new StringBuilder();
 
-		return sb.append("[").append(left).append(" && ").append(right).append(
+        return sb.Append("[").Append(left).Append(" && ").Append(right).Append(
 				"]").ToString();
 	}
 }

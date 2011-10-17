@@ -17,7 +17,7 @@ namespace AIMA.Core.Agent
          * 
          * @return The Agents belonging to this Environment.
          */
-        List<Agent> getAgents();
+        List<IAgent> getAgents();
 
         /**
          * Add an agent to the Environment.
@@ -25,7 +25,7 @@ namespace AIMA.Core.Agent
          * @param agent
          *            the agent to be added.
          */
-        void addAgent(Agent agent);
+        void addAgent(IAgent agent);
 
         /**
          * Remove an agent from the environment.
@@ -33,7 +33,7 @@ namespace AIMA.Core.Agent
          * @param agent
          *            the agent to be removed.
          */
-        void removeAgent(Agent agent);
+        void removeAgent(IAgent agent);
 
         /**
          * 
@@ -88,7 +88,7 @@ namespace AIMA.Core.Agent
          *            the Agent for which a performance measure is to be retrieved.
          * @return the performance measure associated with the Agent.
          */
-        double getPerformanceMeasure(Agent forAgent);
+        double getPerformanceMeasure(IAgent forAgent);
 
         /**
          * Add a view on the Environment.

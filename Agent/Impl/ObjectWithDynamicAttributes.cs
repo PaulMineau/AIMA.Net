@@ -3,6 +3,7 @@ namespace AIMA.Core.Agent.Impl
     using System;
     using System.Collections.Generic;
     using System.Text;
+    using System.Diagnostics;
 /**
  * @author Ravi Mohan
  * @author Ciaran O'Reilly
@@ -14,75 +15,78 @@ public abstract class ObjectWithDynamicAttributes {
 	// PUBLIC METHODS
 	//
 	public String describeType() {
-		return getClass().getSimpleName();
+		return this.GetType().Name;
 	}
 
 	public String describeAttributes() {
 		StringBuilder sb = new StringBuilder();
 
-		sb.append("[");
+		sb.Append("[");
 		bool first = true;
-		foreach (Object key in attributes.keySet()) {
+		foreach (Object key in attributes.Keys) {
 			if (first) {
 				first = false;
 			} else {
-				sb.append(", ");
+                sb.Append(", ");
 			}
 
-			sb.append(key);
-			sb.append("==");
-			sb.append(attributes.get(key));
+            sb.Append(key);
+            sb.Append("==");
+            sb.Append(attributes[key]);
 		}
-		sb.append("]");
+        sb.Append("]");
 
 		return sb.ToString();
 	}
 
 	public HashSet<Object> getKeySet() {
-		return Collections.unmodifiableSet(attributes.keySet());
+		return new Set<Object>(attributes.Keys);
 	}
 
 	public void setAttribute(Object key, Object value) {
-		attributes.put(key, value);
+		attributes[key] = value;
 	}
 
 	public Object getAttribute(Object key) {
-		return attributes.get(key);
+		return attributes[key];
 	}
 
 	public void removeAttribute(Object key) {
-		attributes.remove(key);
+		attributes.Remove(key);
 	}
 
 	public ObjectWithDynamicAttributes copy() {
 		ObjectWithDynamicAttributes copy = null;
 
 		try {
-			copy = getClass().newInstance();
-			copy.attributes.putAll(attributes);
+			copy = (ObjectWithDynamicAttributes)this.GetType().GetConstructor(System.Type.EmptyTypes).Invoke(null);
+            foreach (object val in attributes)
+            {
+                copy.attributes.Add(val, attributes[val]);
+            }
 		} catch (Exception ex) {
-			ex.printStackTrace();
+			Debug.WriteLine(ex.ToString());
 		}
 
 		return copy;
 	}
 
 	public override bool Equals(Object o) {
-		if (o == null || getClass() != o.getClass()) {
-			return super.Equals(o);
+		if (o == null || this.GetType() != o.GetType()) {
+			return base.Equals(o);
 		}
 		return attributes.Equals(((ObjectWithDynamicAttributes) o).attributes);
 	}
 
-	public override int HashCode() {
-		return attributes.HashCode();
+	public override int GetHashCode() {
+		return attributes.GetHashCode();
 	}
 
 	public override String ToString() {
 		StringBuilder sb = new StringBuilder();
 
-		sb.append(describeType());
-		sb.append(describeAttributes());
+		sb.Append(describeType());
+		sb.Append(describeAttributes());
 
 		return sb.ToString();
 	}

@@ -4,6 +4,7 @@ namespace AIMA.Core.Agent.Impl
     using System;
     using System.Collections.Generic;
     using AIMA.Core.Agent;
+    using System.Diagnostics;
 
     /**
      * @author Ravi Mohan
@@ -17,7 +18,7 @@ namespace AIMA.Core.Agent.Impl
 
         }
 
-        public override String describeType()
+        public String describeType()
         {
             return typeof(Percept).Name;
         }
@@ -35,9 +36,9 @@ namespace AIMA.Core.Agent.Impl
 
         public DynamicPercept(Object[] keys, Object[] values)
         {
-            assert(keys.length == values.length);
+            Debug.Assert(keys.Length == values.Length);
 
-            for (int i = 0; i < keys.length; i++)
+            for (int i = 0; i < keys.Length; i++)
             {
                 setAttribute(keys[i], values[i]);
             }

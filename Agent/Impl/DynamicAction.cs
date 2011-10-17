@@ -1,24 +1,25 @@
 namespace AIMA.Core.Agent.Impl
 {
-    using System;
     using System.Collections.Generic;
-using AIMA.Core.Agent.Action;
+    using AIMA.Core.Agent;
 
 /**
  * @author Ciaran O'Reilly
  */
 public class DynamicAction : ObjectWithDynamicAttributes ,
 		Action {
-	public const String ATTRIBUTE_NAME = "name";
+    public const System.String ATTRIBUTE_NAME = "name";
 
 	//
 
-	public DynamicAction(String name) {
+    public DynamicAction(System.String name)
+    {
 		this.setAttribute(ATTRIBUTE_NAME, name);
 	}
 
-	public String getName() {
-		return (String) getAttribute(ATTRIBUTE_NAME);
+    public System.String getName()
+    {
+        return (System.String)getAttribute(ATTRIBUTE_NAME);
 	}
 
 	//
@@ -30,8 +31,8 @@ public class DynamicAction : ObjectWithDynamicAttributes ,
 	// END-Action
 	//
 
-	public override String describeType() {
-		return Action.GetType().Name;
+	public System.String describeType() {
+		return this.GetType().Name;
 	}
 }
 }

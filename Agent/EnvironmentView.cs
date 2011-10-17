@@ -30,7 +30,7 @@ public interface EnvironmentView {
 	 *            the EnvironmentState that resulted from the Agent being added
 	 *            to the Environment.
 	 */
-	void agentAdded(Agent agent, EnvironmentState resultingState);
+	void agentAdded(IAgent agent, EnvironmentState resultingState);
 
 	/**
 	 * Indicates the Environment has changed as a result of an Agent's action.
@@ -43,6 +43,6 @@ public interface EnvironmentView {
 	 *            the EnvironmentState that resulted from the Agent's Action on
 	 *            the Environment.
 	 */
-	void agentActed(Agent agent, Action action, EnvironmentState resultingState);
+	void agentActed(IAgent agent, Action action, EnvironmentState resultingState);
 }
 }

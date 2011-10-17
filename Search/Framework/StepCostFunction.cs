@@ -1,6 +1,5 @@
 namespace AIMA.Core.Search.Framework
 {
-    using System;
     using System.Collections.Generic;
     using AIMA.Core.Agent;
 
@@ -29,6 +28,6 @@ namespace AIMA.Core.Search.Framework
          *            the state reached by taking the action.
          * @return the cost of taking action a in state s to reach state s'.
          */
-        double c(Object s, Action a, Object sPrime);
+        double c(object s, Action a, object sPrime);
     }
 }

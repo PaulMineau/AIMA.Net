@@ -1,17 +1,11 @@
+using System;
+using System.Collections.Generic;
+using AIMA.Core.Agent;
+using AIMA.Core.Agent.Impl;
+using AIMA.Core.Agent.Impl.AProg.SimpleRule;
+
 namespace AIMA.Core.Agent.Impl.AProg
 {
-
-
-    using System;
-    using System.Collections.Generic;
-using AIMA.Core.Agent.Action;
-using AIMA.Core.Agent.AgentProgram;
-using AIMA.Core.Agent.Percept;
-using AIMA.Core.Agent.Impl.DynamicPercept;
-using AIMA.Core.Agent.Impl.NoOpAction;
-using AIMA.Core.Agent.Impl.ObjectWithDynamicAttributes;
-using AIMA.Core.Agent.Impl.AProg.SimpleRule.Rule;
-
 /**
  * Artificial Intelligence A Modern Approach (3rd Edition): Figure 2.10, page 49.
  * <code>
@@ -34,7 +28,7 @@ using AIMA.Core.Agent.Impl.AProg.SimpleRule.Rule;
 public class SimpleReflexAgentProgram : AgentProgram {
 	//
 	// persistent: rules, a set of condition-action rules
-	private HashSet<Rule> rules;
+    private Set<Rule> rules;
 
 	public SimpleReflexAgentProgram(Set<Rule> aRuleSet) {
 		rules = aRuleSet;
@@ -44,7 +38,7 @@ public class SimpleReflexAgentProgram : AgentProgram {
 	// START-AgentProgram
 
 	// function SIMPLE-RELEX-AGENT(percept) returns an action
-	public override Action execute(Percept percept) {
+	public Action execute(Percept percept) {
 
 		// state <- INTERPRET-INPUT(percept);
 		ObjectWithDynamicAttributes state = interpretInput(percept);

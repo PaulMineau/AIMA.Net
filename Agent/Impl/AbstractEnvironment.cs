@@ -1,6 +1,5 @@
 namespace AIMA.Core.Agent.Impl
 {
-    using System;
     using System.Collections.Generic;
     using AIMA.Core.Agent;
 
@@ -17,11 +16,11 @@ namespace AIMA.Core.Agent.Impl
         // access to these elements via List interface.
         protected HashSet<EnvironmentObject> envObjects = new LinkedHashSet<EnvironmentObject>();
 
-        protected HashSet<Agent> agents = new LinkedHashSet<Agent>();
+        protected HashSet<IAgent> agents = new LinkedHashSet<IAgent>();
 
         protected HashSet<EnvironmentView> views = new LinkedHashSet<EnvironmentView>();
 
-        protected Map<Agent, Double> performanceMeasures = new LinkedHashMap<Agent, Double>();
+        protected Map<IAgent, System.Double> performanceMeasures = new LinkedHashMap<IAgent, System.Double>();
 
         //
         // PRUBLIC METHODS
@@ -31,9 +30,9 @@ namespace AIMA.Core.Agent.Impl
         // Methods to be implemented by subclasses.
         public abstract EnvironmentState getCurrentState();
 
-        public abstract EnvironmentState executeAction(Agent agent, Action action);
+        public abstract EnvironmentState executeAction(IAgent agent, Action action);
 
-        public abstract Percept getPerceptSeenBy(Agent anAgent);
+        public abstract Percept getPerceptSeenBy(IAgent anAgent);
         /**
          * Method for implementing dynamic environments in which not all changes
          * are directly caused by agent action execution. The default implementation
@@ -43,18 +42,18 @@ namespace AIMA.Core.Agent.Impl
 
         //
         // START-Environment
-        public List<Agent> getAgents()
+        public List<IAgent> getAgents()
         {
             // Return as a List but also ensures the caller cannot modify
-            return new List<Agent>(agents);
+            return new List<IAgent>(agents);
         }
 
-        public void addAgent(Agent a)
+        public void addAgent(IAgent a)
         {
             addEnvironmentObject(a);
         }
 
-        public void removeAgent(Agent a)
+        public void removeAgent(IAgent a)
         {
             removeEnvironmentObject(a);
         }
@@ -67,9 +66,10 @@ namespace AIMA.Core.Agent.Impl
 
         public void addEnvironmentObject(EnvironmentObject eo) {
 		envObjects.Add(eo);
-		if (eo is Agent) {
-			Agent a = (Agent) eo;
-			if (!agents.contains(a)) {
+        if (eo is IAgent)
+        {
+            IAgent a = (IAgent)eo;
+			if (!agents.Contains(a)) {
 				agents.Add(a);
 				this.updateEnvironmentViewsAgentAdded(a);
 			}
@@ -78,8 +78,8 @@ namespace AIMA.Core.Agent.Impl
 
         public void removeEnvironmentObject(EnvironmentObject eo)
         {
-            envObjects.remove(eo);
-            agents.remove(eo);
+            envObjects.Remove(eo);
+           // agents.Remove(eo);
         }
 
         /**
@@ -89,7 +89,7 @@ namespace AIMA.Core.Agent.Impl
          * and {@link #createExogenousChange()}.
          */
         public void step() {
-		foreach (Agent agent in agents) {
+		foreach (IAgent agent in agents) {
 			if (agent.isAlive()) {
 				Action anAction = agent.execute(getPerceptSeenBy(agent));
 				EnvironmentState es = executeAction(agent, anAction);
@@ -116,7 +116,7 @@ namespace AIMA.Core.Agent.Impl
         }
 
         public bool isDone() {
-		foreach (Agent agent in agents) {
+		foreach (IAgent agent in agents) {
 			if (agent.isAlive()) {
 				return false;
 			}
@@ -124,13 +124,13 @@ namespace AIMA.Core.Agent.Impl
 		return true;
 	}
 
-        public double getPerformanceMeasure(Agent forAgent)
+        public double getPerformanceMeasure(IAgent forAgent)
         {
-            Double pm = performanceMeasures.get(forAgent);
+            System.Double pm = performanceMeasures[forAgent];
             if (null == pm)
             {
-                pm = new Double(0);
-                performanceMeasures.put(forAgent, pm);
+                pm = 0.0;
+                performanceMeasures[forAgent] = pm;
             }
 
             return pm;
@@ -143,10 +143,10 @@ namespace AIMA.Core.Agent.Impl
 
         public void removeEnvironmentView(EnvironmentView ev)
         {
-            views.remove(ev);
+            views.Remove(ev);
         }
 
-        public void notifyViews(String msg) {
+        public void notifyViews(System.String msg) {
 		foreach (EnvironmentView ev in views) {
 			ev.notify(msg);
 		}
@@ -159,19 +159,19 @@ namespace AIMA.Core.Agent.Impl
         // PROTECTED METHODS
         //
 
-        protected void updatePerformanceMeasure(Agent forAgent, double addTo)
+        protected void updatePerformanceMeasure(IAgent forAgent, double addTo)
         {
-            performanceMeasures.put(forAgent, getPerformanceMeasure(forAgent)
-                    + addTo);
+            performanceMeasures[forAgent] = getPerformanceMeasure(forAgent)
+                    + addTo;
         }
 
-        protected void updateEnvironmentViewsAgentAdded(Agent agent) {
+        protected void updateEnvironmentViewsAgentAdded(IAgent agent) {
 		foreach (EnvironmentView view in views) {
 			view.agentAdded(agent, getCurrentState());
 		}
 	}
 
-        protected void updateEnvironmentViewsAgentActed(Agent agent, Action action,
+        protected void updateEnvironmentViewsAgentActed(IAgent agent, Action action,
                 EnvironmentState state) {
 		foreach (EnvironmentView view in views) {
 			view.agentActed(agent, action, state);

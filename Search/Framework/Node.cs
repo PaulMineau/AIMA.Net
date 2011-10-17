@@ -1,6 +1,5 @@
 namespace AIMA.Core.Search.Framework
 {
-    using System;
     using System.Collections.Generic;
     using AIMA.Core.Agent;
 
@@ -29,7 +28,7 @@ namespace AIMA.Core.Search.Framework
     {
 
         // n.STATE: the state in the state space to which the node corresponds;
-        private Object state;
+        private System.Object state;
 
         // n.PARENT: the node in the search tree that generated this node;
         private Node parent;
@@ -41,21 +40,20 @@ namespace AIMA.Core.Search.Framework
         // the initial state to the node, as indicated by the parent pointers.
         private double pathCost;
 
-        public Node(Object state)
+        public Node(System.Object state)
         {
             this.state = state;
             this.pathCost = 0.0;
         }
 
-        public Node(Object state, Node parent, Action action, double stepCost)
+        public Node(System.Object state, Node parent, Action action, double stepCost) : this(state)
         {
-            this(state);
             this.parent = parent;
             this.action = action;
             this.pathCost = parent.pathCost + stepCost;
         }
 
-        public Object getState()
+        public System.Object getState()
         {
             return state;
         }
@@ -86,15 +84,15 @@ namespace AIMA.Core.Search.Framework
             Node current = this;
             while (!current.isRootNode())
             {
-                path.Add(0, current);
+                path.Insert(0, current);
                 current = current.getParent();
             }
             // ensure the root node is added
-            path.Add(0, current);
+            path.Insert(0, current);
             return path;
         }
 
-        public override String ToString()
+        public override System.String ToString()
         {
             return "[parent=" + parent + ", action=" + action + ", state="
                     + getState() + ", pathCost=" + pathCost + "]";

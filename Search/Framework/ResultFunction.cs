@@ -1,6 +1,5 @@
 namespace AIMA.Core.Search.Framework
 {
-    using System;
     using System.Collections.Generic;
     using AIMA.Core.Agent;
 
@@ -23,6 +22,6 @@ namespace AIMA.Core.Search.Framework
          *            an action to be performed in state s.
          * @return the state that results from doing action a in state s.
          */
-        Object result(Object s, Action a);
+        System.Object result(System.Object s, Action a);
     }
 }

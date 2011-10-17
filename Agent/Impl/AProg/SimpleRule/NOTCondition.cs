@@ -3,7 +3,8 @@ namespace AIMA.Core.Agent.Impl.AProg.SimpleRule
     using System;
     using System.Collections.Generic;
     using System.Text;
-using AIMA.Core.Agent.Impl;
+    using AIMA.Core.Agent.Impl;
+    using System.Diagnostics;
 
 /**
  * Implementation of a NOT condition.
@@ -18,7 +19,7 @@ public class NOTCondition : Condition {
 	private Condition con;
 
 	public NOTCondition(Condition aCon) {
-		assert (null != aCon);
+		Debug.Assert (null != aCon);
 
 		con = aCon;
 	}
@@ -30,7 +31,7 @@ public class NOTCondition : Condition {
 	public override String ToString() {
 		StringBuilder sb = new StringBuilder();
 
-		return sb.append("![").append(con).append("]").ToString();
+        return sb.Append("![").Append(con).Append("]").ToString();
 	}
 }
 }

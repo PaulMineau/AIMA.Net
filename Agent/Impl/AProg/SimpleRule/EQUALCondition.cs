@@ -3,7 +3,8 @@ namespace AIMA.Core.Agent.Impl.AProg.SimpleRule
     using System;
     using System.Collections.Generic;
     using System.Text;
-using AIMA.Core.Agent.Impl;
+    using AIMA.Core.Agent.Impl;
+    using System.Diagnostics;
 
 /**
  * Implementation of an EQUALity condition.
@@ -20,8 +21,8 @@ public class EQUALCondition : Condition {
 	private Object value;
 
 	public EQUALCondition(Object aKey, Object aValue) {
-		assert (null != aKey);
-		assert (null != aValue);
+		Debug.Assert (null != aKey);
+        Debug.Assert(null != aValue);
 
 		key = aKey;
 		value = aValue;
@@ -34,7 +35,7 @@ public class EQUALCondition : Condition {
 	public override String ToString() {
 		StringBuilder sb = new StringBuilder();
 
-		return sb.append(key).append("==").append(value).ToString();
+        return sb.Append(key).Append("==").Append(value).ToString();
 	}
 }
 }

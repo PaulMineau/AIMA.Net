@@ -1,10 +1,10 @@
 namespace AIMA.Core.Search.Framework
 {
-    using System;
     using System.Collections.Generic;
     using AIMA.Core.Agent;
     using AIMA.Core.Util;
     using AIMA.Core.Util.DataStructure;
+    using System.Threading;
 
     /**
      * @author Ravi Mohan
@@ -12,11 +12,11 @@ namespace AIMA.Core.Search.Framework
      */
     public abstract class QueueSearch : NodeExpander
     {
-        public const String METRIC_QUEUE_SIZE = "queueSize";
+        public const System.String METRIC_QUEUE_SIZE = "queueSize";
 
-        public const String METRIC_MAX_QUEUE_SIZE = "maxQueueSize";
+        public const System.String METRIC_MAX_QUEUE_SIZE = "maxQueueSize";
 
-        public const String METRIC_PATH_COST = "pathCost";
+        public const System.String METRIC_PATH_COST = "pathCost";
 
         //
         //
@@ -51,9 +51,9 @@ namespace AIMA.Core.Search.Framework
                     return SearchUtils.actionsFromNodes(root.getPathFromRoot());
                 }
             }
-            frontier.insert(root);
+            frontier.Enqueue(root);
             setQueueSize(frontier.Count);
-            while (!(frontier.isEmpty()) && !CancelableThread.currIsCanceled())
+            while (!(frontier.Count==0))
             {
                 // choose a leaf node and remove it from the frontier
                 Node nodeToExpand = popNodeFromFrontier();
@@ -85,7 +85,7 @@ namespace AIMA.Core.Search.Framework
                                     .getPathFromRoot());
                         }
                     }
-                    frontier.insert(fn);
+                    frontier.Enqueue(fn);
                 }
                 setQueueSize(frontier.Count);
             }
@@ -106,20 +106,20 @@ namespace AIMA.Core.Search.Framework
 
         public Node popNodeFromFrontier()
         {
-            return frontier.pop();
+            return frontier.Dequeue();
         }
 
         public bool removeNodeFromFrontier(Node toRemove)
         {
-            return frontier.remove(toRemove);
+            return false; // TODO
         }
 
         public abstract List<Node> getResultingNodesToAddToFrontier(
                 Node nodeToExpand, Problem p);
 
-        public override void clearInstrumentation()
+        public  void clearInstrumentation()
         {
-            super.clearInstrumentation();
+            base.clearInstrumentation();
             metrics.set(METRIC_QUEUE_SIZE, 0);
             metrics.set(METRIC_MAX_QUEUE_SIZE, 0);
             metrics.set(METRIC_PATH_COST, 0);
@@ -151,7 +151,7 @@ namespace AIMA.Core.Search.Framework
             return metrics.getDouble(METRIC_PATH_COST);
         }
 
-        public void setPathCost(Double pathCost)
+        public void setPathCost(double pathCost)
         {
             metrics.set(METRIC_PATH_COST, pathCost);
         }
@@ -161,7 +161,7 @@ namespace AIMA.Core.Search.Framework
         //
         private List<Action> failure()
         {
-            return Collections.emptyList();
+            return new List<Action>();
         }
     }
 }

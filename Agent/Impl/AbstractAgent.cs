@@ -1,14 +1,13 @@
 namespace AIMA.Core.Agent.Impl
 {
-    using System;
     using System.Collections.Generic;
-using AIMA.Core.Agent;
+    using AIMA.Core.Agent;
 
 /**
  * @author Ravi Mohan
  * @author Ciaran O'Reilly
  */
-public abstract class AbstractAgent : Agent {
+public abstract class AbstractAgent : IAgent {
 
 	protected AgentProgram program;
 	private bool alive = true;

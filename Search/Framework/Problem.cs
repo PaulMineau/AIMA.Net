@@ -42,9 +42,10 @@ namespace AIMA.Core.Search.Framework
 
         public Problem(Object initialState, ActionsFunction actionsFunction,
                 ResultFunction resultFunction, GoalTest goalTest)
+            : this(initialState, actionsFunction, resultFunction, goalTest,
+                new DefaultStepCostFunction())
         {
-            this(initialState, actionsFunction, resultFunction, goalTest,
-                    new DefaultStepCostFunction());
+            
         }
 
         public Problem(Object initialState, ActionsFunction actionsFunction,

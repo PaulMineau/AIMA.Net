@@ -1,12 +1,9 @@
 namespace AIMA.Core.Agent.Impl.AProg
 {
-    using System;
     using System.Collections.Generic;
-using AIMA.Core.Agent.Action;
-using AIMA.Core.Agent.AgentProgram;
-using AIMA.Core.Agent.Percept;
-using AIMA.Core.Agent.Impl.NoOpAction;
-using AIMA.Core.Util.DataStructure.Table;
+    using AIMA.Core.Agent;
+    using AIMA.Core.Agent.Impl;
+    using AIMA.Core.Util.DataStructure;
 
 /**
  * Artificial Intelligence A Modern Approach (3rd Edition): Figure 2.7, page 47.
@@ -30,9 +27,9 @@ using AIMA.Core.Util.DataStructure.Table;
 public class TableDrivenAgentProgram : AgentProgram {
 	private List<Percept> percepts = new List<Percept>();
 
-	private Table<List<Percept>, String, Action> table;
+    private Table<List<Percept>, System.String, Action> table;
 
-	private const String ACTION = "action";
+	private const System.String ACTION = "action";
 
 	// persistent: percepts, a sequence, initially empty
 	// table, a table of actions, indexed by percept sequences, initially fully
@@ -41,15 +38,15 @@ public class TableDrivenAgentProgram : AgentProgram {
 			Map<List<Percept>, Action> perceptSequenceActions) {
 
 		List<List<Percept>> rowHeaders = new List<List<Percept>>(
-				perceptSequenceActions.keySet());
+				perceptSequenceActions.Keys);
 
-		List<String> colHeaders = new List<String>();
+        List<System.String> colHeaders = new List<System.String>();
 		colHeaders.Add(ACTION);
 
-		table = new Table<List<Percept>, String, Action>(rowHeaders, colHeaders);
+        table = new Table<List<Percept>, System.String, Action>(rowHeaders, colHeaders);
 
 		foreach (List<Percept> row in rowHeaders) {
-			table.set(row, ACTION, perceptSequenceActions.get(row));
+			table.set(row, ACTION, perceptSequenceActions[row]);
 		}
 	}
 
@@ -74,9 +71,12 @@ public class TableDrivenAgentProgram : AgentProgram {
 	//
 	private Action lookupCurrentAction() {
 		Action action = null;
-
-		action = table.get(percepts, ACTION);
-		if (null == action) {
+        if (table.get(percepts, ACTION) != null)
+        {
+            action = table.get(percepts, ACTION);
+        }
+        else
+        {
 			action = NoOpAction.NO_OP;
 		}
 

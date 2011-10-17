@@ -1,6 +1,5 @@
 namespace AIMA.Core.Search.Framework
 {
-    using System;
     using System.Collections.Generic;
     using AIMA.Core.Agent;
 
@@ -25,6 +24,6 @@ namespace AIMA.Core.Search.Framework
          *            a particular state.
          * @return the set of actions that can be executed in s.
          */
-        HashSet<Action> actions(Object s);
+        HashSet<Action> actions(object s);
     }
 }

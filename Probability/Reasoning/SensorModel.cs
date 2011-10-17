@@ -29,7 +29,7 @@ namespace AIMA.Core.Probability.Reasoning
 
         public Double get(String state, String perception)
         {
-            return table.get(state, perception).Value;
+            return table.get(state, perception);
         }
 
         public Matrix asMatrix(String perception) {

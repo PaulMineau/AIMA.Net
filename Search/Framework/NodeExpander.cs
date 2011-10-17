@@ -1,6 +1,5 @@
 namespace AIMA.Core.Search.Framework
 {
-    using System;
     using System.Collections.Generic;
     using AIMA.Core.Agent;
 
@@ -10,7 +9,7 @@ namespace AIMA.Core.Search.Framework
      */
     public class NodeExpander
     {
-        public const String METRIC_NODES_EXPANDED = "nodesExpanded";
+        public const System.String METRIC_NODES_EXPANDED = "nodesExpanded";
 
         protected Metrics metrics;
 
@@ -44,7 +43,7 @@ namespace AIMA.Core.Search.Framework
 
             foreach (Action action in actionsFunction.actions(node.getState()))
             {
-                Object successorState = resultFunction.result(node.getState(),
+                System.Object successorState = resultFunction.result(node.getState(),
                         action);
 
                 double stepCost = stepCostFunction.c(node.getState(), action,

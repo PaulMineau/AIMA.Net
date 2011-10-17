@@ -7,7 +7,7 @@ namespace AIMA.Core.Util.DataStructure
      * @author Ravi Mohan
      * 
      */
-    public class Table<RowHeaderType, ColumnHeaderType, Value_Type> where Value_Type : struct
+    public class Table<RowHeaderType, ColumnHeaderType, Value_Type> // where Value_Type : struct
     {
         private List<RowHeaderType> rowHeaders;
         private List<ColumnHeaderType> columnHeaders;
@@ -38,17 +38,17 @@ namespace AIMA.Core.Util.DataStructure
             }
         }
 
-        public Value_Type? get(RowHeaderType r, ColumnHeaderType c)
+        public Value_Type get(RowHeaderType r, ColumnHeaderType c)
         {
             if (!rows.ContainsKey(r))
             {
-                return null;
+                return default(Value_Type);
             }
             Dictionary<ColumnHeaderType, Value_Type> rowValues = rows[r];
 
             if (rowValues == null || !rowValues.ContainsKey(c))
             {
-                return null;
+                return default(Value_Type);
             }
             return rowValues[c];
         }

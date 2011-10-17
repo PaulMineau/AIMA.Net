@@ -1,17 +1,21 @@
-namespace aima.test.core.unit.agent.impl;
+namespace aima.test.core.unit.agent.impl
+{
 
-using AIMA.Core.Agent.AgentProgram;
-using AIMA.Core.Agent.Impl.AbstractAgent;
+    using AIMA.Core.Agent;
+    using AIMA.Core.Agent.Impl;
 
-/**
- * @author Ravi Mohan
- * 
- */
-public class MockAgent : AbstractAgent {
-	public MockAgent() {
-	}
+    /**
+     * @author Ravi Mohan
+     * 
+     */
+    public class MockAgent : AbstractAgent
+    {
+        public MockAgent()
+        {
+        }
 
-	public MockAgent(AgentProgram agent) {
-		super(agent);
-	}
+        public MockAgent(AgentProgram agent) : base(agent)
+        {
+        }
+    }
 }

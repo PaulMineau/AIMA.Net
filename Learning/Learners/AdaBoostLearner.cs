@@ -109,7 +109,7 @@ namespace AIMA.Core.Learning.Learners
 			String predictedValue = learner.predict(e);
 			foreach (String v in targetValues) {
 				if (predictedValue.Equals(v)) {
-					table.set(v, learner, table.get(v, learner).Value
+					table.set(v, learner, table.get(v, learner)
 							+ learnerWeights[learner] * 1);
 				}
 			}
@@ -191,7 +191,7 @@ namespace AIMA.Core.Learning.Learners
                 Table<String, Learner, Double> table, List<Learner> learners) {
 		double score = 0.0;
 		foreach (Learner l in learners) {
-			score += table.get(targetValue, l).Value;
+			score += table.get(targetValue, l);
 		}
 		return score;
 	}

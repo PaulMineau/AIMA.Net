@@ -1,6 +1,5 @@
 namespace AIMA.Core.Agent
 {
-    using System;
     using System.Collections.Generic;
     /**
      * Describes an Action that can or has been taken by an Agent via one of its Actuators. 

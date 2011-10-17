@@ -51,7 +51,7 @@ namespace AIMA.Core.Probability.Reasoning
 
         public double get(String old_state_action, String newState)
         {
-            return table.get(old_state_action, newState).Value;
+            return table.get(old_state_action, newState);
         }
 
         public Matrix asMatrix(String action)
@@ -103,7 +103,7 @@ namespace AIMA.Core.Probability.Reasoning
             double total = 0.0;
             foreach (String state in states)
             {
-                total += table.get(state_action, state).Value;
+                total += table.get(state_action, state);
                 if (total >= probability)
                 {
                     return state;

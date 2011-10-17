@@ -17,32 +17,32 @@ namespace AIMA.Core.Search.Framework
 
         public void set(String name, int i)
         {
-            hash.put(name, int.ToString(i));
+            hash[name] = i.ToString();
         }
 
         public void set(String name, double d)
         {
-            hash.put(name, Double.ToString(d));
+            hash[name] = d.ToString();
         }
 
         public int getInt(String name)
         {
-            return new int(hash.get(name)).intValue();
+            return int.Parse(hash[name]);
         }
 
         public double getDouble(String name)
         {
-            return new Double(hash.get(name)).doubleValue();
+            return double.Parse(hash[name]);
         }
 
         public String get(String name)
         {
-            return hash.get(name);
+            return hash[name];
         }
 
         public HashSet<String> keySet()
         {
-            return hash.keySet();
+            return new HashSet<string>(hash.Keys);
         }
     }
 }

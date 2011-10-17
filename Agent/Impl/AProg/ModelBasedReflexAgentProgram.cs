@@ -1,14 +1,8 @@
 namespace AIMA.Core.Agent.Impl.AProg
 {
-    using System;
     using System.Collections.Generic;
-    using AIMA.Core.Agent.Action;
-    using AIMA.Core.Agent.AgentProgram;
-    using AIMA.Core.Agent.Model;
-    using AIMA.Core.Agent.Percept;
-    using AIMA.Core.Agent.Impl.DynamicState;
-    using AIMA.Core.Agent.Impl.NoOpAction;
-    using AIMA.Core.Agent.Impl.AProg.SimpleRule.Rule;
+    using AIMA.Core.Agent;
+    using AIMA.Core.Agent.Impl.AProg.SimpleRule;
 
     /**
      * Artificial Intelligence A Modern Approach (3rd Edition): Figure 2.12, page 51.

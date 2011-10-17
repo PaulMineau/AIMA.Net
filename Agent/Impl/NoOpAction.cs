@@ -5,7 +5,7 @@ namespace AIMA.Core.Agent.Impl
     public class NoOpAction : DynamicAction
     {
 
-        public const NoOpAction NO_OP = new NoOpAction();
+        public static readonly NoOpAction NO_OP = new NoOpAction();
 
         //
         // START-Action

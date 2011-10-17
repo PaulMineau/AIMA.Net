@@ -1,10 +1,10 @@
 namespace AIMA.Core.Agent.Impl.AProg.SimpleRule
 {
-    using System;
     using System.Collections.Generic;
     using System.Text;
-using AIMA.Core.Agent.Action;
-using AIMA.Core.Agent.Impl;
+    using AIMA.Core.Agent;
+    using AIMA.Core.Agent.Impl;
+    using System.Diagnostics;
 
 /**
  *  A simple implementation of a "condition-action rule".
@@ -18,11 +18,12 @@ using AIMA.Core.Agent.Impl;
 public class Rule {
 	private Condition con;
 
-	private Action action;
+    private Action action;
 
-	public Rule(Condition aCon, Action anAction) {
-		assert (null != aCon);
-		assert (null != anAction);
+    public Rule(Condition aCon, Action anAction)
+    {
+        Debug.Assert(null != aCon);
+        Debug.Assert(null != anAction);
 
 		con = aCon;
 		action = anAction;
@@ -36,9 +37,9 @@ public class Rule {
 		return action;
 	}
 
-	public override bool Equals(Object o) {
+	public override bool Equals(System.Object o) {
 		if (o == null || !(o is Rule)) {
-			return super.Equals(o);
+			return base.Equals(o);
 		}
 		return (ToString().Equals(((Rule) o).ToString()));
 	}
@@ -47,11 +48,12 @@ public class Rule {
 		return ToString().GetHashCode();
 	}
 
-	public override String ToString() {
+    public override System.String ToString()
+    {
 		StringBuilder sb = new StringBuilder();
 
-		return sb.append("if ").append(con).append(" then ").append(action)
-				.append(".").ToString();
+        return sb.Append("if ").Append(con).Append(" then ").Append(action)
+                .Append(".").ToString();
 	}
 }
 }

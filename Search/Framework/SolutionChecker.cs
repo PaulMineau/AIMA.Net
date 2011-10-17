@@ -1,6 +1,5 @@
 namespace AIMA.Core.Search.Framework
 {
-    using System;
     using System.Collections.Generic;
     using AIMA.Core.Agent;
 
@@ -30,6 +29,6 @@ namespace AIMA.Core.Search.Framework
          * @return true if the solution is acceptable, false otherwise, which
          *         indicates the search should be continued.
          */
-        bool isAcceptableSolution(List<Action> actions, Object goal);
+        bool isAcceptableSolution(List<Action> actions, object goal);
     }
 }
