@@ -1,4 +1,4 @@
-namespace AIMA.Core.Probability
+namespace AIMA.Probability
 {
     using System;
     using System.Collections.Generic;

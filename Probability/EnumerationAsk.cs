@@ -1,3 +1,6 @@
+using AIMA.Probability;
+using AIMA.Probability.Bayes.Impl;
+
 namespace AIMA.Core.Probability
 {
     using System;

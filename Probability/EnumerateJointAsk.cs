@@ -1,3 +1,5 @@
+using AIMA.Probability;
+
 namespace AIMA.Core.Probability
 {
     using System;

@@ -1,4 +1,4 @@
-namespace AIMA.Core.Probability.Reasoning
+namespace AIMA.Probability.Reasoning
 {
     using System;
     using System.Collections.Generic;

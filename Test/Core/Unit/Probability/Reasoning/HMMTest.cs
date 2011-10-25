@@ -1,3 +1,5 @@
+using AIMA.Probability;
+
 namespace AIMA.Test.Core.Unit.Probability.Reasoning
 {
 

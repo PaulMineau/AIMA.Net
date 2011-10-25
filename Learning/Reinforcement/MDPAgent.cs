@@ -1,3 +1,6 @@
+using AIMA.Probability;
+using AIMA.Probability.MDP;
+
 namespace AIMA.Core.Learning.Reinforcement
 {
     using System;

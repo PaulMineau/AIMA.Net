@@ -1,8 +1,10 @@
+using AIMA.Probability.MDP;
+
 namespace AIMA.Core.Learning.Reinforcement
 {
     using System;
     using System.Collections.Generic;
-using AIMA.Core.Probability.Decision;
+using AIMA.Probability.Decision;
 using AIMA.Core.Util;
 using AIMA.Core.Util.DataStructure;
 

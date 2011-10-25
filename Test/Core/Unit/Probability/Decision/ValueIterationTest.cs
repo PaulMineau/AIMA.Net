@@ -1,3 +1,6 @@
+using AIMA.Probability.Example;
+using AIMA.Probability.MDP;
+
 namespace AIMA.Test.Core.Unit.Probability.Decision
 {
 

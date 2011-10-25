@@ -4,7 +4,6 @@ namespace aima.test.core.unit.search.framework
 
     using AIMA.Core.Search.Framework;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using AIMA.Core.Search.Framework;
     using System.Collections.Generic;
 
     /**

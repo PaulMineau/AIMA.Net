@@ -1,47 +1,110 @@
-namespace AIMA.Core.Environment.CellWorld
+using System;
+
+namespace AIMA.Environment.CellWorld
 {
-    using System;
-    using System.Collections.Generic;
+
+
+
+
     /**
-     * @author Ravi Mohan
+     * Artificial Intelligence A Modern Approach (3rd Edition): page 645.<br>
+     * <br>
+     * A representation of a Cell in the environment detailed in Figure 17.1.
      * 
+     * @param <C>
+     *            the content type of the cell.
+     * 
+     * @author Ciaran O'Reilly
+     * @author Ravi Mohan
      */
-    public class Cell
+
+    public class Cell<C>
     {
-        private int x_co_ord, y_co_ord;
+        private int x = 1;
+        private int y = 1;
+        private C content = default(C);
 
-        private double reward;
+        /**
+         * Construct a Cell.
+         * 
+         * @param x
+         *            the x position of the cell.
+         * @param y
+         *            the y position of the cell.
+         * @param content
+         *            the initial content of the cell.
+         */
 
-        public Cell(int i, int j, double reward)
+        public Cell(int x, int y, C content)
         {
-            this.x_co_ord = i;
-            this.y_co_ord = j;
-            this.reward = reward;
+            this.x = x;
+            this.y = y;
+            this.content = content;
         }
 
-        public int getY()
-        {
-            return y_co_ord;
-        }
+        /**
+         * 
+         * @return the x position of the cell.
+         */
 
         public int getX()
         {
-            return x_co_ord;
+            return x;
         }
 
-        public double getReward()
+        /**
+         * 
+         * @return the y position of the cell.
+         */
+
+        public int getY()
         {
-            return reward;
+            return y;
         }
 
-        public void setReward(double reward)
+        /**
+         * 
+         * @return the content of the cell.
+         */
+
+        public C getContent()
         {
-            this.reward = reward;
+            return content;
         }
 
-        public CellWorldPosition position()
+        /**
+         * Set the cell's content.
+         * 
+         * @param content
+         *            the content to be placed in the cell.
+         */
+
+        public void setContent(C content)
         {
-            return new CellWorldPosition(getX(), getY());
+            this.content = content;
+        }
+
+
+        public override String ToString()
+        {
+            return "<x=" + x + ", y=" + y + ", content=" + content + ">";
+        }
+
+
+        public override bool Equals(Object o)
+        {
+            if (o is Cell<C>)
+            {
+                Cell<C> c = (Cell<C>) o;
+                return x == c.x && y == c.y && content.Equals(c.content);
+            }
+            return false;
+        }
+
+
+        public override int GetHashCode()
+        {
+            return x + 23 + y + 31*content.GetHashCode();
         }
     }
 }
